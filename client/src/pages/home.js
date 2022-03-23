@@ -5,7 +5,7 @@ import Hero from '../components/Hero';
 import SectionInfo from '../components/SectionInfo';
 import { aboutObj, galleryObj } from '../data';
 import NailServices from '../components/SectionInfo/NailServices'
-// import Footer from '../components/Footer'
+import Footer from '../components/Footer'
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +28,7 @@ const Home = () => {
       <NailServices />
       {/* <SectionInfo {...servicesObj} /> */}
       <SectionInfo {...galleryObj} />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
