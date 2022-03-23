@@ -1,6 +1,6 @@
-import { useState } from 'react'
-// import TopBar from '../components/Navbar/TopBar'
-import Navbar from '../components/Navbar'
+import { useState } from 'react';
+import TopBar from '../components/Navbar/TopBar'
+import Navbar from '../components/Navbar';
 // import Hero from '../components/Hero'
 // import SectionInfo from '../components/SectionInfo'
 // import { aboutObj, galleryObj } from '../components/SectionInfo/data'
@@ -8,31 +8,29 @@ import Navbar from '../components/Navbar'
 // import Footer from '../components/Footer'
 
 const Home = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [displayMenu, setDisplayMenu] = useState(true)
+  const [isOpen, setIsOpen] = useState(false);
+  const [displayMenu, setDisplayMenu] = useState(true);
 
   const toggleBar = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   const displayNavMenu = () => {
-    setDisplayMenu(!displayMenu)
-  }
+    setDisplayMenu(!displayMenu);
+  };
 
   return (
     <>
-    {/* <TopBar /> */}
-    {/* <Navbar />
-    <TopBar isOpen={isOpen} toggleBar={toggleBar} /> */}
-    <Navbar toggleBar={toggleBar} displayNavMenu={displayNavMenu}/>
-    {/* <Hero />
+      <TopBar isOpen={isOpen} toggleBar={toggleBar} />
+      <Navbar toggleBar={toggleBar} displayNavMenu={displayNavMenu} />
+      {/* <Hero />
     <SectionInfo {...aboutObj}/>
     <NailServices />
     {/* <SectionInfo {...servicesObj}/> */}
-    {/* <SectionInfo {...galleryObj}/>
+      {/* <SectionInfo {...galleryObj}/>
     <Footer />  */}
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
