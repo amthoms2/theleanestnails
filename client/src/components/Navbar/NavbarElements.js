@@ -3,10 +3,10 @@ import { Link as LinkRouter } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
 
 export const Nav = styled.div`
-  background: black;
-  /* background: ${({ scroll }) => (scroll ? '#000' : 'transparent')}; */
+  /* background: black; */
+  background: ${({ scroll }) => (scroll ? '#000' : 'transparent')};
   height: 80px;
-  /* margin-top: -80px; */
+  margin-top: -80px;
   display: flex;
   justify-content: center;
   align-items: center;
