@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import TopBar from '../components/Navbar/TopBar'
+import TopBar from '../components/Navbar/TopBar';
 import Navbar from '../components/Navbar';
-import Hero from '../components/Hero'
-// import SectionInfo from '../components/SectionInfo'
-// import { aboutObj, galleryObj } from '../components/SectionInfo/data'
-// import NailServices from '../components/SectionInfo/NailServices'
+import Hero from '../components/Hero';
+import SectionInfo from '../components/SectionInfo';
+import { aboutObj, galleryObj } from '../data';
+import NailServices from '../components/SectionInfo/NailServices'
 // import Footer from '../components/Footer'
 
 const Home = () => {
@@ -24,11 +24,11 @@ const Home = () => {
       <TopBar isOpen={isOpen} toggleBar={toggleBar} />
       <Navbar toggleBar={toggleBar} displayNavMenu={displayNavMenu} />
       <Hero />
-    {/* <SectionInfo {...aboutObj}/>
-    <NailServices /> */}
-    {/* <SectionInfo {...servicesObj}/>
-      {/* <SectionInfo {...galleryObj}/>
-    <Footer />  */}
+      <SectionInfo {...aboutObj} />
+      <NailServices />
+      {/* <SectionInfo {...servicesObj} /> */}
+      <SectionInfo {...galleryObj} />
+      {/* <Footer /> */}
     </>
   );
 };
