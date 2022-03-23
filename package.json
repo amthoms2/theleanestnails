@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server"
+    "start": "node server/index.js",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "Asia",
   "license": "ISC",

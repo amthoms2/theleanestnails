@@ -1,19 +1,19 @@
 const express = require('express');
 const app = express();
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const dotenv = require('dotenv')
 const path = require('path')
 const port = 8080
 dotenv.config();
 const cors = require("cors");
-// const bookingRoute = require('./routes/booking')
+const bookingRoute = require('./routes/booking')
 
-// mongoose
-//   .connect(
-//     process.env.MONGO_URL
-//   )
-//   .then(() => console.log('DB Connection Successful'))
-//   .catch((err) => console.log(err));
+mongoose
+  .connect(
+    process.env.MONGO_URL
+  )
+  .then(() => console.log('DB Connection Successful'))
+  .catch((err) => console.log(err));
 
   app.use(cors())
   app.use(express.urlencoded({ extended: true }))
@@ -21,7 +21,7 @@ const cors = require("cors");
   // app.use(express.static(path.join(__dirname, '/client/build')))
   //use this root folder full of static files every single req and res!
 
-  // app.use('/api/booking', bookingRoute)
+  app.use('/api/booking', bookingRoute)
 
   app.get('/api/test', ()=>{
     console.log('test is successful')
@@ -31,11 +31,24 @@ const cors = require("cors");
   // --------------------------deployment------------------------------
 // const __dirname = path.resolve();
 
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname, "/client/build")));
+
+//   app.get("*", (req, res) =>
+//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+//   );
+// } else {
+//   app.get("/", (req, res) => {
+//     res.send("API is running..");
+//   });
+// }
+const __dirname1 = path.resolve();
+
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/client/build")));
+  app.use(express.static(path.join(__dirname1, "/client/build")));
 
   app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+    res.sendFile(path.resolve(__dirname1, "client", "build", "index.html"))
   );
 } else {
   app.get("/", (req, res) => {
