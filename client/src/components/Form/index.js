@@ -11,6 +11,7 @@ import {
   Button,
   // FormButton,
 } from './FormElements';
+import { NextButton } from '../Book/BookingElements'
 
 const Spinner = ({ loading }) => {
   return loading ? (
@@ -98,7 +99,7 @@ const Form = ({ form, onSubmit, status }) => {
 
   return (
     <>
-      <FormContainer>
+      {/* <FormContainer> */}
         <MainContainer>
           <Forms onSubmit={handleSubmit}>
             {form.fields.map((field) => {
@@ -129,7 +130,7 @@ const Form = ({ form, onSubmit, status }) => {
             <Message status={status} text={form.config.messages[status]} />
           </Forms>
         </MainContainer>
-      </FormContainer>
+      {/* </FormContainer> */}
     </>
   );
 };

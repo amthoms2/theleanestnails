@@ -4,12 +4,12 @@ import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import StaticDatePicker from '@mui/lab/StaticDatePicker';
-import { MainContainer, ServiceNames } from './BookingElements';
+import { MainContainer, ServiceNames, NextButton } from './BookingElements';
 import { services } from '../../data';
 import BookingForm from './BookingForm';
 // import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import { styled } from '@mui/styles';
+// import Button from '@mui/material/Button';
+// import { styled } from '@mui/styles';
 
 //FIX ISSUE FOR DISABLED DAYS!!
 
@@ -37,9 +37,9 @@ const Calendar = ({ selections, handleClick }) => {
     setFormPageView(!formPageView);
   };
 
-  const NextButton = styled(Button)({
-    color: '#43e4db',
-  });
+  // const NextButton = styled(Button)({
+  //   color: '#43e4db',
+  // });
 
   // const ServiceNames = styled('div')({
   //   color: '#43e4db',
@@ -48,7 +48,7 @@ const Calendar = ({ selections, handleClick }) => {
   return (
     <>
       <MainContainer>
-        <NextButton onClick={handleClick}>Go back</NextButton>
+        {/* <NextButton onClick={handleClick}>Go back</NextButton> */}
         {formPageView ? (
           <BookingForm
             handleClick={handleClick}
@@ -58,6 +58,7 @@ const Calendar = ({ selections, handleClick }) => {
         ) : (
           <>
             {/* <MainContainer> */}
+            <NextButton onClick={handleClick}>Go back</NextButton>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               {/* <button onClick={handleClick}>Go back</button> */}
               <StaticDatePicker

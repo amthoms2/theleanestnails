@@ -31,6 +31,13 @@ export const DataGridWrapper = styled.div`
   letter-spacing: 0.4rem;
 `;
 
+export const NextButton = styled.p`
+  color: #43e4db;
+  padding: 15px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  cursor: pointer;
+`
+
 export const ServiceNames = styles('div')({
   color: '#43e4db',
   position: 'absolute',

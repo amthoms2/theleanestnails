@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Form from '../Form';
 import config from './config.js';
 import axios from 'axios';
-import Button from '@mui/material/Button';
-import { styled } from '@mui/styles';
+import { FormContainer } from '../Form/FormElements';
+import { NextButton } from './BookingElements';
 
 const BookingForm = ({ handleClick, date, servicesList }) => {
   const [status, setStatus] = useState('');
@@ -25,14 +25,13 @@ const BookingForm = ({ handleClick, date, servicesList }) => {
     }, 3000);
   };
 
-  const NextButton = styled(Button)({
-    color: '#43e4db',
-  });
 
   return (
     <>
-      {/* <NextButton onClick={handleClick}>Go back</NextButton> */}
+    <FormContainer>
+      <NextButton onClick={handleClick}>Go back</NextButton>
       <Form form={config} onSubmit={handleSubmit} status={status} />
+      </FormContainer>
     </>
   );
 };
