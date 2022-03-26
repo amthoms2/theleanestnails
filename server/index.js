@@ -7,6 +7,7 @@ const port = 8080
 dotenv.config();
 const cors = require("cors");
 const bookingRoute = require('./routes/booking')
+const googleRoute = require('./routes/google')
 
 mongoose
   .connect(
@@ -27,6 +28,8 @@ mongoose
     console.log('test is successful')
 
   })
+
+  app.use('/api/google', googleRoute)
 
   // --------------------------deployment------------------------------
 // const __dirname = path.resolve();
@@ -55,6 +58,7 @@ if (process.env.NODE_ENV === "production") {
     res.send("API is running..");
   });
 }
+
 // --------------------------deployment------------------------------
 
   // app.get('*', function(req, res) {

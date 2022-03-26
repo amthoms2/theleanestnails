@@ -41,8 +41,8 @@ const Footer = () => {
                 </FooterLink>
                 <FooterLink to="/gallery">Gallery</FooterLink>
                 <FooterLink to="/book">Book an Appointment</FooterLink>
+                <FooterLink to="/book">Modify Appointment</FooterLink>
                 <FooterLink to="/shop">Shop</FooterLink>
-                <FooterLink to="/signin">Sign In</FooterLink>
                 <FooterLink to="/contact">Contact Me</FooterLink>
               </FooterItems>
 

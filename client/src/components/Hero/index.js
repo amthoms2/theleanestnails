@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-undef */
-import React, { useState } from 'react';
+import { useState } from 'react';
 import nailsvid from '../../media/nailsvid.mp4';
 import { Button } from '../Buttons/ButtonElements';
 import {

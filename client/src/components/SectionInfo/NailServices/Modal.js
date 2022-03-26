@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import { useSpring, animated } from 'react-spring';
 import img from '../../../media/leana.png';
 import styled from 'styled-components';

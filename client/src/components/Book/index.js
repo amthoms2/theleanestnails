@@ -3,7 +3,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { services } from '../../data';
-import { MainContainer, DataGridWrapper } from './BookingElements';
+import { MainContainer, DataGridWrapper, NextButton } from './BookingElements';
 import Calendar from './Calendar';
 import { styled } from '@mui/styles';
 import Navbar from '../Navbar';
@@ -24,16 +24,16 @@ const Book = () => {
     },
   ];
 
-  const NextButton = styled(Button)({
+  const Next = styled(Button)({
     color: '#43e4db',
   });
 
   const CustomFooterStatusComponent = () => {
     return (
       <Box sx={{ padding: '10px', display: 'flex' }}>
-        <NextButton variant="contained" onClick={handleClick}>
+        <Next variant="contained" onClick={handleClick}>
           Next
-        </NextButton>
+        </Next>
       </Box>
     );
   };
@@ -75,6 +75,7 @@ const Book = () => {
               }}
             />
           </DataGridWrapper>
+          <NextButton style={{ position: 'absolute', bottom: 0 }}>Cancel or Modify an Appointment</NextButton>
         </MainContainer>
       ) : (
         <Calendar selections={selectionModel} handleClick={handleClick} />
