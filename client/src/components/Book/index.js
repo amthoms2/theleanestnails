@@ -3,7 +3,13 @@ import { DataGrid } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { services } from '../../data';
-import { MainContainer, DataGridWrapper, LinksWrapper, CancelLink, ModifyLink } from './BookingElements';
+import {
+  MainContainer,
+  DataGridWrapper,
+  LinksWrapper,
+  CancelLink,
+  ModifyLink,
+} from './BookingElements';
 import Calendar from './Calendar';
 import { styled } from '@mui/styles';
 import Navbar from '../Navbar';
@@ -75,10 +81,10 @@ const Book = () => {
               }}
             />
           </DataGridWrapper>
-        <LinksWrapper>
-          <CancelLink to='/cancelbooking'>Cancel Booking</CancelLink>
+          <LinksWrapper>
+            <CancelLink to="/cancelbooking">Cancel Booking</CancelLink>
 
-          <ModifyLink to='/modify'>Modify Booking</ModifyLink>
+            <ModifyLink to="/modifybooking">Modify Booking</ModifyLink>
           </LinksWrapper>
         </MainContainer>
       ) : (

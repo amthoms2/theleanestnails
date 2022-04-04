@@ -53,6 +53,7 @@ export const CancelLink = styled(Link)`
 `
 
 export const ModifyLink = styled(Link)`
+  visibility: hidden;
   color: #43e4db;
   padding: 20px;
   /* padding-right: 250px; */
