@@ -16,21 +16,23 @@ const BookingForm = ({ handleClick, date, servicesList }) => {
         'http://localhost:8080/api/booking/book',
         form
       );
-
+      await setTimeout(() => {
+        setStatus('success');
+      }, 3000);
+      console.log('res in booking', res.data);
     } catch (err) {
+      setTimeout(() => {
+        setStatus('error');
+      }, 3000);
       console.log(err);
     }
-    setTimeout(() => {
-      setStatus('success');
-    }, 3000);
   };
-
 
   return (
     <>
-    <FormContainer>
-      <NextButton onClick={handleClick}>Go back</NextButton>
-      <Form form={config} onSubmit={handleSubmit} status={status} />
+      <FormContainer>
+        <NextButton onClick={handleClick}>Go back</NextButton>
+        <Form form={config} onSubmit={handleSubmit} status={status} />
       </FormContainer>
     </>
   );

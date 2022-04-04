@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { styled as styles } from '@mui/styles';
+import { Link } from 'react-router-dom';
 import img from '../../media/lighting.jpg';
 
 export const MainContainer = styled.div`
@@ -35,6 +36,27 @@ export const NextButton = styled.p`
   color: #43e4db;
   padding: 15px;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  cursor: pointer;
+`
+export const LinksWrapper = styled.div`
+  display: flex;
+  position: absolute;
+  bottom: 33px;
+`
+
+export const CancelLink = styled(Link)`
+  color: #43e4db;
+  padding: 20px;
+  /* right: 150px; */
+  text-decoration: none;
+  cursor: pointer;
+`
+
+export const ModifyLink = styled(Link)`
+  color: #43e4db;
+  padding: 20px;
+  /* padding-right: 250px; */
+  text-decoration: none;
   cursor: pointer;
 `
 

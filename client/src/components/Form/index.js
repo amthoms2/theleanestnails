@@ -76,6 +76,7 @@ const Form = ({ form, onSubmit, status }) => {
     if (status === 'success') {
       setFields(fields.map((field) => ({ ...field, value: '' })));
     }
+    // eslint-disable-next-line
   }, [status]);
 
   // adding useCallback allows for this to re-render ONLY if the dependency changes
