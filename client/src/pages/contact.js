@@ -1,11 +1,11 @@
-import Navbar from '../components/Navbar'
+// import Navbar from '../components/Navbar'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 
 const ContactPage = () => {
   return (
     <>
-    <Navbar />
+    {/* <Navbar /> */}
     <Contact />
     <Footer />
     </>

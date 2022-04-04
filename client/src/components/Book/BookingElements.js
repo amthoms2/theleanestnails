@@ -46,8 +46,8 @@ export const LinksWrapper = styled.div`
 
 export const CancelLink = styled(Link)`
   color: #43e4db;
-  padding: 20px;
-  /* right: 150px; */
+  padding-left: 130px;
+  /* padding: 20px; */
   text-decoration: none;
   cursor: pointer;
 `
