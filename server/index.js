@@ -7,6 +7,7 @@ const port = 8080
 dotenv.config();
 const cors = require("cors");
 const bookingRoute = require('./routes/booking')
+const contactRoute = require('./routes/contact')
 const googleRoute = require('./routes/google')
 
 mongoose
@@ -23,6 +24,7 @@ mongoose
   //use this root folder full of static files every single req and res!
 
   app.use('/api/booking', bookingRoute)
+  app.use('/api/contact', contactRoute)
 
   app.get('/api/test', ()=>{
     console.log('test is successful')

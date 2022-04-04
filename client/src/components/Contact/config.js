@@ -3,7 +3,7 @@ const config = {
     messages: {
       success: 'We received your message! Thanks for inquiring.',
       error:
-        'An error occurred during submittal. Please contact me at theleanestnails.business@gmail.com',
+        'An error occurred. Please contact theleanestnails.business@gmail.com',
     },
     buttonText: 'Send',
     spinner: true,
@@ -30,7 +30,7 @@ const config = {
       label: 'Comments',
       type: 'textarea',
       placeholder: 'Enter your message...',
-      required: false,
+      required: true,
     },
   ],
 };

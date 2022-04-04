@@ -47,6 +47,7 @@ const Contact = () => {
         setStatus('success');
       }, 3000);
     } catch (err) {
+      console.log('error here')
       setTimeout(() => {
         setStatus('error');
       }, 3000);
