@@ -41,7 +41,7 @@ const Contact = () => {
   const handleSubmit = async (form) => {
     setStatus('loading');
     try {
-      const res = await axios.post('http://localhost:8080/api/contact', form);
+      const res = await axios.post('/api/contact', form);
       console.log('res contact', res.data);
       await setTimeout(() => {
         setStatus('success');
