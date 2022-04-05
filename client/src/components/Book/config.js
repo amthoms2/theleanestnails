@@ -1,7 +1,7 @@
 const config = {
   config: {
     messages: {
-      success: 'We received your message! Thanks for inquiring.',
+      success: 'Your appointment has been booked. Please check your email.',
       error:
         'An error occurred during submittal. Please contact us at support@xyz.com',
     },

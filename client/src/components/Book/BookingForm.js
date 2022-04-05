@@ -19,7 +19,7 @@ const BookingForm = ({ handleClick, date, servicesList }) => {
       await setTimeout(() => {
         setStatus('success');
       }, 3000);
-      console.log('res in booking', res.data);
+      // console.log('res in booking', res.data);
     } catch (err) {
       setTimeout(() => {
         setStatus('error');

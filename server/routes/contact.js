@@ -1,14 +1,14 @@
 const router = require('express').Router();
 const nodemailer = require('nodemailer');
 
-const EMAIL = process.env.EMAIL;
-
 router.post('/', (req, res) => {
+  const EMAIL = process.env.EMAIL;
+  const NODEMAIL = process.env.NODEMAIL
 
   const contactEmail = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'theleanestnails.business@gmail.com',
+      user: NODEMAIL,
       pass: EMAIL,
     },
   });
@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
   const comments = req.body.Comments;
   const mail = {
     from: name,
-    to: 'theleanestnails.business@gmail.com',
+    to: NODEMAIL,
     subject: 'Leanest Nails - Contact Form Submission',
     html: `<p>Name: ${name}</p>
            <p>Email: ${email}</p>

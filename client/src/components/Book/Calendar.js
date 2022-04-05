@@ -17,7 +17,7 @@ const Calendar = ({ selections, handleClick }) => {
   const [value, setValue] = useState(new Date());
   const [formPageView, setFormPageView] = useState(false);
 
-  const myDates = ['Wed Mar 24 2022', 'Wed Mar 25 2022', 'Wed Mar 26 2022', 'Wed Mar 247 2022'];
+  const myDates = ['Wed Apr 6 2022', 'Thur Apr 7 2022'];
 
   const disableDates = (date) => {
     return !myDates
