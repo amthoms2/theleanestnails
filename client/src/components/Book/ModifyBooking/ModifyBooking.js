@@ -14,7 +14,7 @@ const ModifyBooking = () => {
     console.log('form here', form)
     try {
       const res = await axios.put(
-        `http://localhost:8080/api/booking/${confirmationNumber}`,
+        `/api/booking/${confirmationNumber}`,
         form
       );
       await setTimeout(() => {

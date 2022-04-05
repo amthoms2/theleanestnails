@@ -13,7 +13,7 @@ const CancelBooking = () => {
     let confirmationNumber = form['Confirmation #'];
     try {
       const res = await axios.delete(
-        `http://localhost:8080/api/booking/${confirmationNumber}`
+        `/api/booking/${confirmationNumber}`
       );
       console.log('deleted booking', res.data)
       await setTimeout(() => {

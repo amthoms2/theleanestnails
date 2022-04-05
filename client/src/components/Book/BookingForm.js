@@ -12,8 +12,9 @@ const BookingForm = ({ handleClick, date, servicesList }) => {
     setStatus('loading');
     form = { ...form, Date: date };
     try {
+      // eslint-disable-next-line
       const res = await axios.post(
-        'http://localhost:8080/api/booking/book',
+        '/api/booking/book',
         form
       );
       await setTimeout(() => {
