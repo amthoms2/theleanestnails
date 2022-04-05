@@ -15,7 +15,7 @@ mongoose
     process.env.MONGO_URL
   )
   .then(() => console.log('DB Connection Successful'))
-  .catch((err) => console.log(err));
+  .catch((err) => console.log('mongo error', err));
 
   app.use(cors())
   app.use(express.urlencoded({ extended: true }))
