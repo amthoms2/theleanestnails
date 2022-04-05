@@ -13,10 +13,7 @@ const BookingForm = ({ handleClick, date, servicesList }) => {
     form = { ...form, Date: date };
     try {
       // eslint-disable-next-line
-      const res = await axios.post(
-        '/api/booking/book',
-        form
-      );
+      const res = await axios.post('/api/booking/book', form);
       await setTimeout(() => {
         setStatus('success');
       }, 3000);

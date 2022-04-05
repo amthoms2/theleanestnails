@@ -1,7 +1,7 @@
 const config = {
   config: {
     messages: {
-      success: 'We received your message! Thanks for inquiring.',
+      success: 'Message received! Thanks for inquiring.',
       error:
         'An error occurred. Please contact theleanestnails.business@gmail.com',
     },
