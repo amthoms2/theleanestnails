@@ -15,3 +15,4 @@ Make emails responsive
 Instagram icon in emails-> https://www.iconfinder.com/icons/5296765/camera_instagram_instagram_logo_icon
 
 Thank you card email photo -> https://www.pexels.com/photo/text-7564279/
+Shop small help big -> https://www.pexels.com/photo/black-and-white-happy-birthday-card-7563663/

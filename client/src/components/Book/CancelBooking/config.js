@@ -14,14 +14,14 @@ const config = {
       placeholder: 'Enter Confirmation Number',
       required: true,
     },
+    // {
+    //   label: 'Email',
+    //   type: 'email',
+    //   placeholder: 'xyz@gmail.com',
+    //   required: true,
+    // },
     {
-      label: 'Email',
-      type: 'email',
-      placeholder: 'xyz@gmail.com',
-      required: true,
-    },
-    {
-      label: 'Comments',
+      label: 'Reason',
       type: 'textarea',
       placeholder: 'Enter reason for cancellation...',
       required: false,
