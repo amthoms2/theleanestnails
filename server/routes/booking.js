@@ -1,5 +1,29 @@
 const router = require('express').Router();
 const Booking = require('../models/booking');
+const nodemailer = require('nodemailer');
+const ejs = require('ejs');
+const { db } = require('../models/booking');
+
+const EMAIL = process.env.EMAIL;
+const NODEMAIL = process.env.NODEMAIL;
+
+const contactEmail = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: NODEMAIL,
+    pass: EMAIL,
+  },
+});
+
+contactEmail.verify((error) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Ready to Send');
+  }
+});
+
+// console.log('db info', db.bookings.find())
 
 //USER GETS BOOKING
 router.get('/find/:id', async (req, res) => {
@@ -13,7 +37,7 @@ router.get('/find/:id', async (req, res) => {
 
 //USER CREATE BOOKING
 router.post('/book', async (req, res) => {
-  console.log('req',req.body)
+  console.log('req', req.body);
   const booking = new Booking({
     name: req.body.Name,
     email: req.body.Email,
@@ -23,13 +47,42 @@ router.post('/book', async (req, res) => {
     date: req.body.Date,
   });
   try {
-    console.log('after req', booking)
+    console.log('after req', booking);
     const savedBooking = await booking.save();
-    console.log('savedBooking', savedBooking)
+    console.log('savedBooking', savedBooking);
     res.status(201).json(savedBooking);
   } catch (err) {
     res.status(500).json(err);
   }
+
+  const name = req.body.Name;
+  const email = req.body.Email;
+
+  await ejs.renderFile(
+    __dirname + '/Emails/appointmentConfirmation.ejs',
+    { name: name },
+    function (err, data) {
+      if (err) {
+        res.status(500).json(err);
+      } else {
+        const mail = {
+          from: name,
+          to: email,
+          // to: NODEMAIL,
+          subject: 'Leanest Nails - Appointment Confirmation',
+          html: data,
+        };
+
+        contactEmail.sendMail(mail, (err) => {
+          if (err) {
+            res.status(500).json(err);
+          } else {
+            res.status(200).json('Message Sent');
+          }
+        });
+      }
+    }
+  );
 });
 
 //USER CANCELS BOOKING

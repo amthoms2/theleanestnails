@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const nodemailer = require('nodemailer');
+const ejs = require('ejs');
 
 router.post('/', (req, res) => {
   const EMAIL = process.env.EMAIL;
-  const NODEMAIL = process.env.NODEMAIL
+  const NODEMAIL = process.env.NODEMAIL;
 
   const contactEmail = nodemailer.createTransport({
     service: 'gmail',
@@ -25,22 +26,36 @@ router.post('/', (req, res) => {
   const email = req.body.Email;
   const number = req.body.Number;
   const comments = req.body.Comments;
-  const mail = {
-    from: name,
-    to: NODEMAIL,
-    subject: 'Leanest Nails - Contact Form Submission',
-    html: `<p>Name: ${name}</p>
-           <p>Email: ${email}</p>
-           <p>Number: ${number}</p>
-           <p>Message: ${comments}</p>`,
-  };
-  contactEmail.sendMail(mail, (error) => {
-    if (error) {
-      res.json({ status: 'ERROR' });
-    } else {
-      res.json({ status: 'Message Sent' });
+
+  ejs.renderFile(
+    __dirname + '/Emails/contactEmail.ejs',
+    { name: name },
+    function (err, data) {
+      if (err) {
+        res.status(500).json(err)
+      } else {
+        const mail = {
+          from: name,
+          to: NODEMAIL,
+          subject: 'Leanest Nails - Contact Form Submission',
+          html: data,
+        };
+
+        contactEmail.sendMail(mail, (err) => {
+          if (err) {
+            res.status(500).json(err)
+          } else {
+            res.status(200).json('Message Sent')
+          }
+        });
+      }
     }
-  });
+  );
 });
 
 module.exports = router;
+
+// html: `<p>Name: ${name}</p>
+//                <p>Email: ${email}</p>
+//                <p>Number: ${number}</p>
+//                <p>Message: ${comments}</p>`,
