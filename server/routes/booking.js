@@ -49,18 +49,19 @@ router.post('/book', async (req, res) => {
   try {
     console.log('after req', booking);
     const savedBooking = await booking.save();
-    console.log('savedBooking', savedBooking);
     res.status(201).json(savedBooking);
+
   } catch (err) {
     res.status(500).json(err);
   }
 
   const name = req.body.Name;
-  const email = req.body.Email;
+  const email = req.body.Email
 
   await ejs.renderFile(
-    __dirname + '/Emails/appointmentConfirmation.ejs',
-    { name: name },
+    __dirname + '/Emails/appointmentEmail.ejs',
+    { name: name, h1: 'Thank you!', message:'Your appointment has been confirmed!',
+    img: "https://images.pexels.com/photos/7564279/pexels-photo-7564279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=400"},
     function (err, data) {
       if (err) {
         res.status(500).json(err);
@@ -87,12 +88,43 @@ router.post('/book', async (req, res) => {
 
 //USER CANCELS BOOKING
 router.delete('/:id', async (req, res) => {
+  const booking = await Booking.findById(req.params.id);
+  const email = booking.email;
   try {
     await Booking.findByIdAndDelete(req.params.id);
     res.status(200).json('Booking has been deleted');
   } catch (err) {
     res.status(500).json(err);
   }
+
+  const name = ''
+
+  await ejs.renderFile(
+    __dirname + '/Emails/appointmentEmail.ejs',
+    { name: name, h1: 'Sorry to see you go!', message:'Your appointment has been cancelled. Please proceed to shop my press-on collection.',
+    img: "https://images.pexels.com/photos/7563663/pexels-photo-7563663.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=400"},
+    function (err, data) {
+      if (err) {
+        res.status(500).json(err);
+      } else {
+        const mail = {
+          from: name,
+          to: email,
+          // to: NODEMAIL,
+          subject: 'Leanest Nails - Appointment Cancellation',
+          html: data,
+        };
+
+        contactEmail.sendMail(mail, (err) => {
+          if (err) {
+            res.status(500).json(err);
+          } else {
+            res.status(200).json('Message Sent');
+          }
+        });
+      }
+    }
+  );
 });
 
 //USER UPDATES BOOKING
