@@ -1,44 +1,65 @@
-/*
-USE below instead of key in future
-Workload identity federation
-*/
-// import { JWT } from 'google-auth-library'
-// const CREDENTIALS = JSON.parse(process.env.REACT_APP_CREDENTIALS);
-// const calendarId = process.env.CALENDAR_ID;
+import { useState } from 'react';
+import TextField from '@mui/material/TextField';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import DatePicker from '@mui/lab/StaticDatePicker';
+import { MainContainer } from './BookingElements';
+// import { createTheme } from '@material-ui/core/styles'
+// import { MuiThemeProvider } from '@material-ui/core/styles';
+import { StylesProvider } from "@material-ui/core/styles";
+import "./styles.css";
 
-// // Google calendar API settings
-// const SCOPES = 'https://www.googleapis.com/auth/calendar';
-// const calendar = google.calendar({version : "v3"});
+// const theme = createTheme({
+//   // "root": {
+//   //   "&$selected": {
+//   //     "backgroundColor": "none",
+//   //     "color": "red"
+//   //   }
+//   // }
 
-// const auth = new google.auth.JWT(
-//     CREDENTIALS.client_email,
-//     null,
-//     CREDENTIALS.private_key,
-//     SCOPES
-// );
-// console.log(CREDENTIALS.private_key)
-// async function main() {
-//   const client = new JWT({
-//     email: CREDENTIALS.client_email,
-//     key: CREDENTIALS.private_key,
-//     scopes: ['https://www.googleapis.com/auth/cloud-platform'],
-//   });
-//   console.log('CLIENT HERE',client)
-//   const url = `https://dns.googleapis.com/dns/v1/projects/${CREDENTIALS.project_id}`;
-//   const res = await client.request({url});
-//   console.log('res',res);
-// }
-// main().catch(console.error);
-
-// Your TIMEOFFSET Offset
-// const TIMEOFFSET = '+05:30';
+//   overrides: {
+//       // using this instead will fix the warning:
+//       // day: { // <- this is the root class
+//       //   '&$selected': {
+//       //     color: "red"
+//       //   }
+//       // },
+//       "MuiPickersDay": {
+//         "root": {
+//           "& .Mui-selected": {
+//                 "backgroundColor": "none",
+//                 "color": "red"
+//               }
+//             }
+//       }
+//   },
+// });
 
 const Practice = () => {
+  const [value, setValue] = useState(new Date());
+
   return (
     <>
-      <button style={{width: 100, height: 50}}>Add Event</button>
+      <MainContainer>
+        {/* <MuiThemeProvider theme={theme}> */}
+        <StylesProvider injectFirst>
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <DatePicker
+              disableHighlightToday={true}
+              orientation="landscape"
+              openTo="day"
+              value={value}
+              onChange={(newValue) => {
+                setValue(newValue);
+              }}
+              renderInput={(params) => <TextField {...params} />}
+            />
+          </LocalizationProvider>
+          </StylesProvider>
+        {/* </MuiThemeProvider> */}
+      </MainContainer>
     </>
-  )
-}
+  );
+};
 
-export default Practice
+export default Practice;

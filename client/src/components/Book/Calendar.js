@@ -3,13 +3,12 @@ import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import StaticDatePicker from '@mui/lab/StaticDatePicker';
+import DatePicker from '@mui/lab/StaticDatePicker';
 import { MainContainer, ServiceNames, NextButton } from './BookingElements';
 import { services } from '../../data';
 import BookingForm from './BookingForm';
-// import Box from '@mui/material/Box';
-// import Button from '@mui/material/Button';
-// import { styled } from '@mui/styles';
+import { StylesProvider } from "@material-ui/core/styles";
+import "./styles.css";
 
 //FIX ISSUE FOR DISABLED DAYS!!
 
@@ -17,7 +16,7 @@ const Calendar = ({ selections, handleClick }) => {
   const [value, setValue] = useState(new Date());
   const [formPageView, setFormPageView] = useState(false);
 
-  const myDates = ['Wed Apr 6 2022', 'Thur Apr 7 2022'];
+  const myDates = ['Mon Apr 11 2022', 'Tues Apr 12 2022'];
 
   const disableDates = (date) => {
     return !myDates
@@ -37,18 +36,9 @@ const Calendar = ({ selections, handleClick }) => {
     setFormPageView(!formPageView);
   };
 
-  // const NextButton = styled(Button)({
-  //   color: '#43e4db',
-  // });
-
-  // const ServiceNames = styled('div')({
-  //   color: '#43e4db',
-  // });
-
   return (
     <>
       <MainContainer>
-        {/* <NextButton onClick={handleClick}>Go back</NextButton> */}
         {formPageView ? (
           <BookingForm
             handleClick={handleClick}
@@ -57,11 +47,11 @@ const Calendar = ({ selections, handleClick }) => {
           />
         ) : (
           <>
-            {/* <MainContainer> */}
             <NextButton onClick={handleClick}>Go back</NextButton>
+            <StylesProvider injectFirst>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               {/* <button onClick={handleClick}>Go back</button> */}
-              <StaticDatePicker
+              <DatePicker
                 shouldDisableDate={disableDates}
                 disableHighlightToday={true}
                 orientation="landscape"
@@ -72,20 +62,12 @@ const Calendar = ({ selections, handleClick }) => {
                   setValue(newValue);
                 }}
                 renderInput={(params) => <TextField {...params} />}
-                sx={{
-                  '& .PrivateDatePickerToolbar-penIcon': { display: 'none' },
-                }}
-                // components={{
-                //   Footer: CustomFooterStatusComponent,
-                // }}
               />
-              {/* </MainContainer> */}
             </LocalizationProvider>
-
+            </StylesProvider>
             {/* <button onClick={handleForm}>Next</button>
           <div>{serviceName}</div> */}
             <NextButton onClick={handleForm}>Next</NextButton>
-            {/* </MainContainer> */}
           </>
         )}
         <ServiceNames>Services: {serviceName + ' '}</ServiceNames>
