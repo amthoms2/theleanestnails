@@ -1,28 +1,28 @@
 import { useState } from 'react';
-// import isWeekend from 'date-fns/isWeekend';
 import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DatePicker from '@mui/lab/StaticDatePicker';
+// import DatePicker from '@mui/lab/DatePicker';
+import MobileDatePicker from '@mui/lab/MobileDatePicker';
+
 import { MainContainer, ServiceNames, NextButton } from './BookingElements';
 import { services } from '../../data';
 import BookingForm from './BookingForm';
-import { StylesProvider } from "@material-ui/core/styles";
-import "./styles.css";
+import { StylesProvider } from '@material-ui/core/styles';
+import './styles.css';
 
-//FIX ISSUE FOR DISABLED DAYS!!
 
 const Calendar = ({ selections, handleClick }) => {
-  const [value, setValue] = useState(new Date());
+    const myDates = ['Mon Apr 11 2022', 'Tues Apr 12 2022', 'Sun Apr 10 2022'];
+
+  const [value, setValue] = useState(myDates[0]);
   const [formPageView, setFormPageView] = useState(false);
 
-  const myDates = ['Mon Apr 11 2022', 'Tues Apr 12 2022'];
-
-  const disableDates = (date) => {
-    return !myDates
-      .map((myDate) => new Date(myDate).getTime())
-      .includes(date.getTime());
-  };
+ const disableDates = (date) => {
+  return !myDates
+    .map((myDate) => new Date(myDate).getTime())
+    .includes(date.getTime());
+};
 
   const selectedServices = services.filter((service) => {
     return selections.includes(service.id);
@@ -49,21 +49,19 @@ const Calendar = ({ selections, handleClick }) => {
           <>
             <NextButton onClick={handleClick}>Go back</NextButton>
             <StylesProvider injectFirst>
-            <LocalizationProvider dateAdapter={AdapterDateFns}>
-              {/* <button onClick={handleClick}>Go back</button> */}
-              <DatePicker
-                shouldDisableDate={disableDates}
-                disableHighlightToday={true}
-                orientation="landscape"
-                openTo="day"
-                value={value}
-                disablePast
-                onChange={(newValue) => {
-                  setValue(newValue);
-                }}
-                renderInput={(params) => <TextField {...params} />}
-              />
-            </LocalizationProvider>
+              <LocalizationProvider dateAdapter={AdapterDateFns}>
+                {/* <button onClick={handleClick}>Go back</button> */}
+                <MobileDatePicker
+                  shouldDisableDate={disableDates}
+                  disableHighlightToday={true}
+                  label="Select Date"
+                  value={value || null}
+                  onChange={(newValue) => {
+                    setValue(newValue);
+                  }}
+                  renderInput={(params) => <TextField {...params} />}
+                />
+              </LocalizationProvider>
             </StylesProvider>
             {/* <button onClick={handleForm}>Next</button>
           <div>{serviceName}</div> */}
@@ -77,3 +75,10 @@ const Calendar = ({ selections, handleClick }) => {
 };
 
 export default Calendar;
+
+
+// const disableDates = (date) => {
+//   return !myDates
+//     .map((myDate) => new Date(myDate).getTime())
+//     .includes(date.getTime());
+// };

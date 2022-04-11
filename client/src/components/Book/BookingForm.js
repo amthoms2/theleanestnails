@@ -6,11 +6,12 @@ import { FormContainer } from '../Form/FormElements';
 import { NextButton } from './BookingElements';
 
 const BookingForm = ({ handleClick, date, servicesList }) => {
+// const BookingForm = ({ handleClick, date, servicesList }) => {
   const [status, setStatus] = useState('');
 
   const handleSubmit = async (form) => {
     setStatus('loading');
-    form = { ...form, Date: date };
+    form = { ...form, Date: date, ServicesList: servicesList};
     try {
       // eslint-disable-next-line
       const res = await axios.post('/api/booking/book', form);
@@ -29,7 +30,8 @@ const BookingForm = ({ handleClick, date, servicesList }) => {
   return (
     <>
       <FormContainer>
-        <NextButton onClick={handleClick}>Go back</NextButton>
+        <NextButton>Go back</NextButton>
+        {/* <NextButton onClick={handleClick}>Go back</NextButton> */}
         <Form form={config} onSubmit={handleSubmit} status={status} />
       </FormContainer>
     </>
