@@ -8,6 +8,7 @@ dotenv.config();
 const cors = require("cors");
 const bookingRoute = require('./routes/booking')
 const contactRoute = require('./routes/contact')
+const availabilityRoute = require('./routes/availability.js')
 const googleRoute = require('./routes/google')
 
 mongoose
@@ -25,6 +26,7 @@ mongoose
 
   app.use('/api/booking', bookingRoute)
   app.use('/api/contact', contactRoute)
+  app.use('/api/availability', availabilityRoute)
 
   app.get('/api/test', ()=>{
     console.log('test is successful')

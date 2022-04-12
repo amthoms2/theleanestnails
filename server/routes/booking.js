@@ -43,7 +43,7 @@ router.post('/book', async (req, res) => {
     email: req.body.Email,
     comments: req.body.Comments,
     number: req.body.Number,
-    // servicesList: req.body.ServicesList
+    services: req.body.ServicesList,
     date: req.body.Date,
   });
   try {
