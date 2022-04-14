@@ -5,7 +5,7 @@ const config = {
       error:
         'An error occurred. Please contact us at theleanestnails.business@gmail.com',
     },
-    buttonText: 'Send',
+    buttonText: 'Submit',
     spinner: true,
   },
   fields: [

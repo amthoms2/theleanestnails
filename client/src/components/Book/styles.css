@@ -1,10 +1,33 @@
-
 .MuiButtonBase-root.MuiPickersDay-root.Mui-selected {
   background: #43e4db;
   /* color: black; */
   /* box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   padding: 7px 14px; */
 }
-.MuiButtonBase-root.MuiPickersDay-root{
+.MuiButtonBase-root.MuiPickersDay-root {
   background-color: #43e4db;
 }
+
+.MuiInputBase-root.MuiOutlinedInput-root {
+  width: 250px;
+  right: 50px;
+}
+
+.MuiInputBase-input.MuiOutlinedInput-input {
+  background: #fff;
+}
+
+.MuiFormLabel-root.MuiInputLabel-root {
+  color: #aaa;
+  left: 30px;
+  font-size: 16px;
+  /* height: 0.5375em; */
+}
+
+/* .rmsc .dropdown-container {
+  position: relative;
+  outline: 0;
+  background-color: yellow;
+  border: 1px solid var(--rmsc-border);
+  border-radius: var(--rmsc-radius);
+} */
