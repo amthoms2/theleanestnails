@@ -11,12 +11,9 @@ import BookingForm from '../BookingForm';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import { StylesProvider } from '@material-ui/core/styles';
-// import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import MobileDatePicker from '@mui/lab/MobileDatePicker';
 import { BookingContainer, Other } from '../BookingElements';
 
-// import { daysToWeeks } from "date-fns/esm";
-// import { dataplex } from "googleapis/build/src/apis/dataplex";
 const options = [
   { label: 'Manicure 💅🏾', value: 'manicure' },
   { label: 'Pedicure 🦶🏾', value: 'pedicure' },
@@ -27,17 +24,7 @@ const Practice = (props) => {
   const [availableDates, setAvailableDates] = useState([]);
   const [selected, setSelected] = useState([]);
   const [value, setValue] = useState('');
-  const [time, setTime] = useState({})
-  // const [currentSlots, setCurrentSlots] = useState([{}] -> (availability obj));
-
-  /*
-  get all appointments (useeffect1 - total appts)
-  trigger when value changes (useeffect2 - value)
-  useeffect2, take the appts and filter them to only total available time slots
-     ^currentslots - map
-  use id to create and find availability
-
-  */
+  const [time, setTime] = useState({});
 
   const handleDateChange = (date) => {
     const updatedDate = new Date(date);
@@ -54,28 +41,19 @@ const Practice = (props) => {
       }
     };
     getDates();
-    console.log('rendered again')
+    console.log('rendered again');
   }, []);
 
-  console.log('availabledates',availableDates)
+  console.log('availabledates', availableDates);
 
-  // useEffect(() => {
-  //   effect
-  //   return () => {
-
-  //   }
-  // }, [value])
   const filterTimes = () => {
     let getValueDay = moment(value).format('YYYY-MM-DD');
-    // let getTimeDay = moment(time).format('YYYY-MM-DD');
 
-    let items = availableDates.filter(item => {
-        return moment(item.date).format('YYYY-MM-DD') === getValueDay
-    })
-    return items
-  }
-  console.log('filter',filterTimes())
-
+    let items = availableDates.filter((item) => {
+      return moment(item.date).format('YYYY-MM-DD') === getValueDay;
+    });
+    return items;
+  };
 
   const slotOptions = () => {
     return filterTimes().map((currentSlot) => {
@@ -83,12 +61,18 @@ const Practice = (props) => {
       return {
         label: moment(date).format('LT'),
         value: currentSlot,
-        // key: currentSlot._id
       };
     });
   };
 
-  console.log('time', time)
+  const disableDates = (date) => {
+    // console.log('date', date)
+    if(availableDates.length >= 1){
+    return !availableDates
+      .map((myDate) => moment(myDate.date).format('YYYY-MM-DD'))
+      .includes(moment(date).format('YYYY-MM-DD'));
+  }};
+
   return (
     <BookingContainer>
       <Other>
@@ -101,7 +85,8 @@ const Practice = (props) => {
                 <StylesProvider injectFirst>
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <MobileDatePicker
-                      // shouldDisableDate={disableDates}
+                      shouldDisableDate={disableDates}
+                      disablePast
                       disableHighlightToday={true}
                       label={'MM/DD/YYYY'}
                       value={value || null}
@@ -139,7 +124,7 @@ const Practice = (props) => {
           <h2 class="text-center">Select Services</h2>
           <div class="container text-left">
             <div class="row justify-content-center">
-              <div class="col-7 text-center">
+              <div class="col-7 text-center" style={{"z-index": "9999"}}>
                 <p>Multiple services can be selected</p>
                 {/* <pre>{JSON.stringify(selected)}</pre> */}
                 <MultiSelect

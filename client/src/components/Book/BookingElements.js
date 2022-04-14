@@ -73,7 +73,7 @@ export const ServiceNames = styles('div')({
 export const BookingContainer = styled.div`
   background-image: url(${img});
   background-size: cover;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   /* height: 100vh;
@@ -119,6 +119,9 @@ export const Other = styled.div`
   @media only screen and (min-width: 768px) {
     width: 50vw;
     height: 80vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
   }
   @media only screen and (min-width: 1024px) {
     width: 45vw;

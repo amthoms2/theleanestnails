@@ -57,7 +57,8 @@ export const FormContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  z-index: 1;
+  /* width: 100vw; */
 `
 
   // flex-direction: column;
