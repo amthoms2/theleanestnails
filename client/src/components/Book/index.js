@@ -34,7 +34,7 @@ const Booking = (props) => {
   useEffect(() => {
     const getDates = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/api/availability');
+        const res = await axios.get('/api/availability');
         setAvailableDates(res.data);
       } catch (err) {
         console.log(err);
@@ -70,6 +70,8 @@ const Booking = (props) => {
       return !availableDates
         .map((myDate) => moment(myDate.date).format('YYYY-MM-DD'))
         .includes(moment(date).format('YYYY-MM-DD'));
+    } else {
+      return date
     }
   };
 
