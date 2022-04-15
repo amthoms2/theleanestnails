@@ -10,7 +10,7 @@ const BookingForm = ({ date, servicesList, time, isAvailable }) => {
 
   const handleSubmit = async (form) => {
     setStatus('loading');
-    form = { ...form, Date: date, Time: time.label, ServicesList: servicesList};
+    form = { ...form, Date: date, Time: time.label, ServicesList: servicesList, AvailableId: time.value._id};
     try {
       // eslint-disable-next-line
       await axios.post('/api/booking/book', form);
@@ -29,7 +29,7 @@ const BookingForm = ({ date, servicesList, time, isAvailable }) => {
   return (
     <>
       <FormContainer>
-        <Form form={config} onSubmit={handleSubmit} status={status} />
+        <Form form={config} onSubmit={handleSubmit} status={status}/>
       </FormContainer>
     </>
   );

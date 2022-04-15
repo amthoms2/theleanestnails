@@ -38,7 +38,7 @@ const Field = ({ field, onChange }) => {
               <TextArea name={label} onChange={onChange} {...attributes} />
             );
           default:
-            return <Input name={label} onChange={onChange} {...attributes} />;
+            return <Input name={label} onChange={onChange} {...attributes} borderRadius={"borderRadius"}/>;
         }
       })()}
     </>

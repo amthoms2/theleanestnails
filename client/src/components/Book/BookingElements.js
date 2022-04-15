@@ -108,6 +108,9 @@ export const Other = styled.div`
   @media only screen and (min-width: 360px) {
     width: 80vw;
     height: 90vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
     h4 {
       font-size: small;
     }

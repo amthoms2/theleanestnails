@@ -61,11 +61,6 @@ export const FormContainer = styled.div`
   /* width: 100vw; */
 `
 
-  // flex-direction: column;
-  // justify-content: space-around;
-  // align-items: center;
-  // height: 20%;
-  // width: 100%;
 export const Forms = styled.form`
   display: flex;
   flex-direction: column;
@@ -81,6 +76,7 @@ export const Forms = styled.form`
 export const Input = styled.input`
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  /* border-radius: ${({ borderRadius }) => (borderRadius ? "2rem" : "none")}; */
   border-radius: 2rem;
   width: 80%;
   height: 1rem;
