@@ -1,11 +1,6 @@
 const router = require('express').Router();
 const Availability = require('../models/availability');
 
-// Parameters:
-// {
-//   "date": String ("Dec 02 2019 06:00")
-// }
-
 //GET AVAILABLE APPOINTMENTS
 router.get('/', async (req, res) => {
   try {
@@ -17,6 +12,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+//CREATE NEW APPOINTMENT
 router.post('/newdate', async (req, res) => {
   // console.log('req', req.body);
   const date = new Availability({
@@ -32,6 +28,41 @@ router.post('/newdate', async (req, res) => {
   }
 });
 
+//CHANGE ISAVAILABLE TO FALSE
+router.put('/:id', async (req, res) => {
+  try {
+    const updatedSlot = await Availability.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: {"isAvailable":false}
+      },
+      { new: true }
+    );
+    updatedSlot.save();
+    console.log('updatedSlot', updatedSlot);
+    res.status(200).json(updatedSlot);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//CHANGE ISAVAILABLE TO TRUE
+// router.put('/true/:id', async (req, res) => {
+//   try {
+//     const updatedSlot = await Availability.findByIdAndUpdate(
+//       req.params.id,
+//       {
+//         $set: {"isAvailable":true}
+//       },
+//       { new: true }
+//     );
+//     updatedSlot.save();
+//     console.log('updatedSlot', updatedSlot);
+//     res.status(200).json(updatedSlot);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // router.post("/", function(req, res, next) {
 //   console.log("request attempted");

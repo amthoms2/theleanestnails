@@ -43,8 +43,10 @@ router.post('/book', async (req, res) => {
     email: req.body.Email,
     comments: req.body.Comments,
     number: req.body.Number,
-    services: req.body.ServicesList,
     date: req.body.Date,
+    time: req.body.Time,
+    services: req.body.ServicesList,
+    availability: req.body.AvailableId,
   });
   try {
     console.log('after req', booking);
@@ -60,7 +62,7 @@ router.post('/book', async (req, res) => {
 
   await ejs.renderFile(
     __dirname + '/Emails/appointmentEmail.ejs',
-    { name: name, h1: 'Thank you!', message:'Your appointment has been confirmed!', website: "https://theleanestnails.herokuapp.com/cancelbooking", websiteDescription: 'Cancel Reservation', img: "https://images.pexels.com/photos/7564279/pexels-photo-7564279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=400"},
+    { name: name, h1: 'Thank you!', message:'Your appointment has been confirmed!', website: "https://theleanestnails.herokuapp.com/cancel", websiteDescription: 'Cancel Reservation', img: "https://images.pexels.com/photos/7564279/pexels-photo-7564279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=400"},
     function (err, data) {
       if (err) {
         res.status(500).json(err);
