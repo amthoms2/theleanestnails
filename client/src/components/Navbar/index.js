@@ -8,11 +8,13 @@ import {
   MobileIcon,
   NavMenu,
   NavItem,
+  Image,
   NavScroll,
   NavLink,
   NavBtn,
   NavBtnLink,
 } from './NavbarElements';
+import img from "../../media/LeanestNails-Web.png"
 
 function Navbar({ toggleBar, displayNavMenu }) {
   const [scroll, setScroll] = useState(false);
@@ -33,6 +35,7 @@ function Navbar({ toggleBar, displayNavMenu }) {
       <IconContext.Provider value={{ color: '#fff' }}>
         <Nav scroll={scroll}>
           <NavContainer>
+            <Image src={img} />
             <Logo to="/">Logo</Logo>
             <MobileIcon onClick={toggleBar}>
               <FaBars />

@@ -31,6 +31,14 @@ export const LandingPageBackground = styled.video`
   background: #232a34;
 `;
 
+export const LandingPageImage = styled.img`
+  width: 100%;
+  height: 100%;
+  background: #ffff;
+  -o-object-fit: cover;
+  object-fit: cover;
+`
+
 export const MainContent = styled.div`
   z-index: 1;
   max-width: 120px;

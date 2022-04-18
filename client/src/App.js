@@ -5,11 +5,13 @@ import Booking from './pages/booking';
 import Cancel from './pages/cancel'
 // import Modify from './pages/modify'
 import ContactPage from './pages/contact';
+import ScrollToTop from '../src/components/ScrollToTop'
 // import AboutPage from './pages/about'
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/book" element={<Booking />} />

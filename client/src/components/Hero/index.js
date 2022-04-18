@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-no-undef */
 import { useState } from 'react';
-import nailsvid from '../../media/nailsvid.mp4';
+// import nailsvid from '../../media/nailsvid.mp4';
 import { Button } from '../Buttons/ButtonElements';
 import {
   MainContainer,
   MainBackground,
-  LandingPageBackground,
+  // LandingPageBackground,
+  LandingPageImage,
   MainContent,
   MainH1,
   MainP,
@@ -13,6 +14,7 @@ import {
   ArrowForward,
   ArrowRight,
 } from './HeroElements';
+import img from "../../media/LeanestNails-Web.png"
 
 const Hero = () => {
   const [hover, setHover] = useState(false);
@@ -25,13 +27,16 @@ const Hero = () => {
     <>
       <MainContainer>
         <MainBackground>
-          <LandingPageBackground
+          {/* <LandingPageBackground
             autoPlay
             loop
             muted
             src={nailsvid}
             type="video/mp4"
-          ></LandingPageBackground>
+          ></LandingPageBackground> */}
+
+          <LandingPageImage src={img}/>
+
         </MainBackground>
         <MainContent>
           <MainH1>The Leanest Nails</MainH1>
