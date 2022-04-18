@@ -8,13 +8,13 @@ import {
   // LandingPageBackground,
   LandingPageImage,
   MainContent,
-  MainH1,
-  MainP,
+  // MainH1,
+  // MainP,
   MainButtonWrapper,
   ArrowForward,
   ArrowRight,
 } from './HeroElements';
-import img from "../../media/LeanestNails-Web.png"
+import img from '../../media/LeanestNails-Web.png';
 
 const Hero = () => {
   const [hover, setHover] = useState(false);
@@ -35,12 +35,11 @@ const Hero = () => {
             type="video/mp4"
           ></LandingPageBackground> */}
 
-          <LandingPageImage src={img}/>
-
+          <LandingPageImage src={img} />
         </MainBackground>
         <MainContent>
-          <MainH1>The Leanest Nails</MainH1>
-          <MainP>Lorem Ipssum dmkelfnenfke</MainP>
+          {/* <MainH1>The Leanest Nails</MainH1> */}
+          {/* <MainP>Lorem Ipssum dmkelfnenfke</MainP> */}
           <MainButtonWrapper>
             <Button
               to="book"

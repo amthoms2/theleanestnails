@@ -8,7 +8,7 @@
 /client/build
 # testing
 /coverage
-/readme.txt
+.readme.txt
 
 # production
 /build

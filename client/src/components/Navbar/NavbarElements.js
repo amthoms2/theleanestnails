@@ -66,7 +66,8 @@ export const MobileIcon = styled.div`
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
-    color: #fff;
+    color: ${({ scroll }) => (scroll ? 'green' : 'black')};
+    /* color: green; */
   }
 `;
 //I could not see the responsive bar until I added the white color
@@ -77,7 +78,7 @@ export const NavMenu = styled.ul`
   align-items: center;
   list-style: none;
   text-align: center;
-  margin-right: -22px;
+  margin-right: 2px;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -90,7 +91,7 @@ export const NavItem = styled.li`
 `;
 
 export const NavLink = styled(LinkRouter)`
-  color: #fff;
+  color: ${({ scroll }) => (scroll ? 'white' : 'black')};
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -104,7 +105,7 @@ export const NavLink = styled(LinkRouter)`
 `;
 
 export const NavScroll = styled(LinkScroll)`
-  color: #fff;
+  color: ${({ scroll }) => (scroll ? 'white' : 'black')};
   display: flex;
   align-items: center;
   text-decoration: none;

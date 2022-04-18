@@ -10,12 +10,14 @@ import {
   FooterLink,
   SocialMedia,
   SocialMediaWrapper,
-  Logo,
+  // Logo,
+  Image,
   CopyRights,
   SocialIcon,
   SocialLink,
   StyledIcon,
 } from './FooterElements';
+import img from "../../media/LeanestNails-Web.png"
 
 const Footer = () => {
   const toggleHome = () => {
@@ -62,9 +64,7 @@ const Footer = () => {
 
           <SocialMedia>
             <SocialMediaWrapper>
-              <Logo to="/" onClick={toggleHome}>
-                Logo
-              </Logo>
+              <Image to="/" src={img} onClick={toggleHome} />
               <CopyRights>
                 Leanest Nails © {new Date().getFullYear()} All rights reserved.
               </CopyRights>

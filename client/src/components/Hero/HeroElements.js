@@ -80,7 +80,7 @@ export const MainP = styled.p`
 `;
 
 export const MainButtonWrapper = styled.div`
-  margin-top: 32px;
+  margin-top: 625px;
   display: flex;
   flex-direction: column;
   align-items: center;

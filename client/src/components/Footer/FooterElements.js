@@ -76,7 +76,7 @@ export const SocialMediaWrapper = styled.div`
   }
 `;
 //368 - 820
-export const Logo = styled(Link)`
+export const Logo = styled.img`
   color: #fff;
   justify-self: start;
   cursor: pointer;
@@ -87,6 +87,13 @@ export const Logo = styled(Link)`
   margin-bottom: 16px;
   margin-right: 16px;
   font-weight: bold;
+`;
+
+export const Image = styled.img`
+cursor: pointer;
+height: 13vh;
+align-items: center;
+/* margin-left: 24px; */
 `;
 
 export const CopyRights = styled.small`
