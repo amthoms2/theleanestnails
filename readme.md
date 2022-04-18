@@ -1,5 +1,4 @@
 <!-- PROJECT LOGO -->
-<br />
 <p align="center">
   <a href="https://github.com//amthoms2/theleanestnails">
     <img src="client/src/media/LeanestNails-Web.png" alt="Logo" width="350" />
@@ -11,7 +10,6 @@
                 MERN stack
     Reservation Scheduling | E-commerce
     <br />
-    <br />
     <a href="http://theleanestnails.herokuapp.com/">View Demo</a>
      ·
     <!-- <a href="https://www.youtube.com/watch?v=6skXNTfSanQ">Watch Video Demo</a> -->
@@ -20,7 +18,6 @@
 </p>
 
 ## Functionality
-<br/ >
 
 <strong>Guest clients are able to:</strong>
 * Choose an available date and time slot for their appointment.
@@ -58,8 +55,8 @@
 
 ## Contact Me (Junior Developer)
 
-Asia Thomas - amthoms2.business@gmail.com
-
+Asia Thomas - amthoms2@illinois.edu
+<a href="https://www.linkedin.com/in/amthoms2/">LinkedIn</a>
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
