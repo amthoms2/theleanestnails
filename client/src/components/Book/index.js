@@ -125,7 +125,7 @@ const Booking = (props) => {
           <h2 class="text-center">Select Services</h2>
           <div class="container text-left">
             <div class="row justify-content-center">
-              <div class="col-7 text-center" style={{ 'z-index': '9999' }}>
+              <div class="col-7 text-center">
                 <p>Multiple services can be selected</p>
                 {/* <pre>{JSON.stringify(selected)}</pre> */}
                 <MultiSelect
