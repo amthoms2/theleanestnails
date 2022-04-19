@@ -95,6 +95,7 @@ export const Other = styled.div`
   /* color: #ffffff; */
   text-transform: uppercase;
   letter-spacing: 0.2rem;
+  z-index: 20;
   @media only screen and (max-width: 320px) {
     width: 80vw;
     height: 90vh;

@@ -54,11 +54,8 @@ export const Model = styled.div`
   transition: opacity 0.4s ease, visibility 0.4s ease,
     transform 0.5s ease-in-out;
   visibility: ${({ mod }) => (mod === 'model open' ? 'visible' : 'hidden')};
-  /* visibility: hidden; */
   opacity: ${({ mod }) => (mod === 'model open' ? '1' : '0')};
-  /* opacity: 0; */
   transform: ${({ mod }) => (mod === 'model open' ? '1' : '0')};
-  /* transform: scale(0); */
   overflow: hidden;
   z-index: 999;
 `;
