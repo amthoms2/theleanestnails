@@ -26,14 +26,14 @@ function Navbar({ toggleBar, displayNavMenu }) {
 
   const scrollChange = () => {
     if (window.scrollY >= 80) {
-      setScroll(true);
+      setScroll('true');
     } else {
-      setScroll(false);
+      setScroll('false');
     }
   };
 
   const bars = () => {
-    if (scroll === true) {
+    if (scroll === 'true') {
       return { color: 'white' };
     } else {
       return { color: 'black' };
