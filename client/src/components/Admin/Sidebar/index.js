@@ -15,6 +15,7 @@ import StoreIcon from '@mui/icons-material/Store';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import InsertChartIcon from "@mui/icons-material/InsertChart";
 
 const Sidebar = () => {
   return (
@@ -25,7 +26,6 @@ const Sidebar = () => {
       <hr style={{ height: '0', border: '0.5px solid green' }} />
       <CenterContainer>
         <List>
-          {/* <p>Main</p> */}
           <ListItem>
             <DashboardIcon style={{ fontSize: '18px', color: '#9dd1e6' }} />
             <Title>Dashboard</Title>
@@ -44,6 +44,11 @@ const Sidebar = () => {
           <ListItem>
             <LocalShippingIcon style={{ fontSize: '18px', color: '#9dd1e6' }} />
             <Title>Delivery</Title>
+          </ListItem>
+
+          <ListItem>
+            <InsertChartIcon style={{ fontSize: '18px', color: '#9dd1e6' }} />
+            <Title>Stats</Title>
           </ListItem>
 
           <ListItem>

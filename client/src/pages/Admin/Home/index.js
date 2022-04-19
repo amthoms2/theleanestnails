@@ -1,9 +1,8 @@
-import Sidebar from "../../../components/Admin/Sidebar";
-import Navbar from "../../../components/Admin/Navbar";
-// import "./home.scss";
-// import Widget from "../../../components/Admin";
+import Sidebar from '../../../components/Admin/Sidebar';
+import Navbar from '../../../components/Admin/Navbar';
+import Widget from '../../../components/Admin/Widget';
 // import Featured from "../../../components/Admin";
-// import Chart from "../../../components/Admin";
+import Chart from '../../../components/Admin/Chart';
 // import Table from "../../../components/Admin";
 import styled from 'styled-components';
 
@@ -45,20 +44,15 @@ const AdminHome = () => {
         HOMECONTAINER
         <WidgetsContainer>
           Widget
-          {/* <Widget type="user" />
           <Widget type="order" />
           <Widget type="earning" />
-          <Widget type="balance" /> */}
+          <Widget type="balance" />
         </WidgetsContainer>
-
         <Charts>
-          {/* <Featured /> */}
-          {/* <Chart title="Last 6 Months (Revenue)" aspect={2 / 1} /> */}
+          <Chart title="Last 6 Months (Revenue)" aspect={2 / 1} />
         </Charts>
-
         <ListContainer>
           <ListTitle>Latest Transactions</ListTitle>
-          {/* <Table /> */}
         </ListContainer>
       </HomeContainer>
     </HomeWrapper>
