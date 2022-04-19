@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-// import * as React from "react";
 import './index.css';
 import './styles.css';
 import { MultiSelect } from 'react-multi-select-component';
@@ -20,7 +19,7 @@ const options = [
   { label: 'Strawberry 🍓', value: 'strawberry', disabled: true },
 ];
 
-const Booking = (props) => {
+const Booking = () => {
   const [availableDates, setAvailableDates] = useState([]);
   const [selected, setSelected] = useState([]);
   const [value, setValue] = useState('');
@@ -127,9 +126,7 @@ const Booking = (props) => {
             <div class="row justify-content-center">
               <div class="col-7 text-center">
                 <p>Multiple services can be selected</p>
-                {/* <pre>{JSON.stringify(selected)}</pre> */}
                 <MultiSelect
-                  // className="multi"
                   options={options}
                   value={selected}
                   onChange={setSelected}

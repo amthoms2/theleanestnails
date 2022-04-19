@@ -11,6 +11,11 @@ const AvailabilitySchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// AvailabilitySchema.index({date: 1},{expireAfterSeconds: 5});
+let today = new Date();
+AvailabilitySchema.index({createdAt: 1},{partialFilterExpression: { date: { $lte: { today } } }});
+
+// AvailabilitySchema.index({date: 1},{expireAfterSeconds: 89400});
+
+// db.availabilities.deleteMany({ date : {"$lt" : lastWeek } })
 
 module.exports = mongoose.model('Availability', AvailabilitySchema);
