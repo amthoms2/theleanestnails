@@ -49,7 +49,7 @@ const Field = ({ field, onChange }) => {
 // It won't rerender if the props passed down haven't changed
 const MemoField = memo(Field);
 
-const Form = ({ form, onSubmit, status }) => {
+const Form = ({ form, onSubmit, status, color }) => {
   const refField = useRef();
 
   const [fields, setFields] = useState(
@@ -100,7 +100,7 @@ const Form = ({ form, onSubmit, status }) => {
   return (
     <>
       {/* <FormContainer> */}
-        <MainContainer>
+        <MainContainer color={color}>
           <Forms onSubmit={handleSubmit}>
             {form.fields.map((field) => {
               return (

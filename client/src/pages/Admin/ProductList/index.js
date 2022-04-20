@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Sidebar from '../../../components/Admin/Sidebar';
 import Navbar from '../../../components/Admin/Navbar';
-import DataTable from '../../../components/Admin/Sidebar';
+import DataTable from '../../../components/Admin/DataTable';
 
 const ListContainer = styled.div`
   display: flex;

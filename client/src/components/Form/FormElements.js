@@ -12,7 +12,8 @@ export const MainContainer = styled.div`
   backdrop-filter: blur(8.5px);
   -webkit-backdrop-filter: blur(8.5px);
   border-radius: 10px;
-  color: #ffffff;
+  color: ${({ color }) => (color === 'blackColor' ? 'black' : ' #ffffff')};
+  /* color: #ffffff; */
   text-transform: uppercase;
   letter-spacing: 0.4rem;
   @media only screen and (max-width: 320px) {

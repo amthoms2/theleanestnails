@@ -82,11 +82,11 @@ export const ordersRowData = [
     id: 123,
     products: ['Cinderella Press Ons'],
     img: require('./media/nailflower.jpg').default,
-    date: "1 March",
+    date: '1 March',
     customer: 'Dana Scully',
     amount: 65,
     method: 'Online Payment',
-    status: 'Approved'
+    status: 'Approved',
   },
 
   {
@@ -94,10 +94,10 @@ export const ordersRowData = [
     products: ['Aladdin Press Ons'],
     customer: 'Thonas Mor',
     img: require('./media/leana.png').default,
-    date: "1 March",
+    date: '1 March',
     amount: 75,
     method: 'Online Payment',
-    status: 'Pending'
+    status: 'Pending',
   },
 
   {
@@ -105,10 +105,10 @@ export const ordersRowData = [
     products: ['Hawaian Press Ons'],
     customer: 'Tommy Bahama',
     img: require('./media/lighting.jpg').default,
-    date: "1 March",
+    date: '1 March',
     amount: 45,
     method: 'Cash',
-    status: 'Approved'
+    status: 'Approved',
   },
 
   {
@@ -116,9 +116,47 @@ export const ordersRowData = [
     products: ['Michael Scott Press Ons'],
     customer: 'Michael Scott',
     img: require('./media/options.png').default,
-    date: "1 March",
+    date: '1 March',
     amount: 85,
     method: 'Online Payment',
-    status: 'Pending'
+    status: 'Pending',
+  },
+];
+
+export const productsRowsData = [
+  {
+    id: 1,
+    title: 'Cinderella Press Ons',
+    img: require('./media/nailflower.jpg').default,
+    inStock: true,
+    quantity: 12,
+    price: 55,
+  },
+
+  {
+    id: 2,
+    title: 'Aladdin Press Ons',
+    img: require('./media/options.png').default,
+    inStock: true,
+    quantity: 1,
+    price: 45,
+  },
+
+  {
+    id: 3,
+    title: 'Princess Tiana Press Ons',
+    img: require('./media/lighting.jpg').default,
+    inStock: true,
+    quantity: 1,
+    price: 49,
+  },
+
+  {
+    id: 4,
+    title: 'The Office Custom Press Ons',
+    img: require('./media/leana.png').default,
+    inStock: false,
+    quantity: 0,
+    price: 35,
   },
 ];

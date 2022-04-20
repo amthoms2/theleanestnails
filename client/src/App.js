@@ -10,7 +10,7 @@ import ScrollToTop from '../src/components/ScrollToTop';
 import AdminHome from './pages/Admin/Home';
 import AdminLogin from './pages/Admin/AdminLogin';
 import ProductList from './pages/Admin/ProductList';
-import Product from './pages/Admin/Product';
+import ProductPage from './pages/Admin/Product';
 import New from './pages/Admin/New';
 
 function App() {
@@ -26,20 +26,20 @@ function App() {
           <Route path="contact" element={<ContactPage />} />
           <Route path="gallery" element={<GalleryPage />} />
           {/* <Route path="/about" element={<AboutPage />} /> */}
-        </Route>
-        {/* ***********************ADMIN************************* */}
 
-        <Route path="/admin">
-          <Route index element={<AdminHome />} />
-          <Route path="admin-login" element={<AdminLogin />} />
-        </Route>
+          {/* ***********************ADMIN************************* */}
 
-        <Route path="/admin-products">
-          <Route index element={<ProductList />} />
-          <Route path=":productId" element={<Product />} />
-          <Route path="new" element={<New />} />
-        </Route>
+          <Route path="admin">
+            <Route index element={<AdminHome />} />
+            <Route path="admin-login" element={<AdminLogin />} />
+          </Route>
 
+          <Route path="admin/products">
+            <Route index element={<ProductList />} />
+            <Route path=":productId" element={<ProductPage />} />
+            <Route path="new" element={<New />} />
+          </Route>
+        </Route>
       </Routes>
     </Router>
   );
