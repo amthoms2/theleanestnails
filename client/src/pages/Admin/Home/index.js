@@ -3,7 +3,8 @@ import Navbar from '../../../components/Admin/Navbar';
 import Widget from '../../../components/Admin/Widget';
 // import Featured from "../../../components/Admin";
 import Chart from '../../../components/Admin/Chart';
-// import Table from "../../../components/Admin";
+import TableList from '../../../components/Admin/Table';
+// import DataTable from "../../../components/Admin/DataTable";
 import styled from 'styled-components';
 
 const HomeWrapper = styled.div`
@@ -41,9 +42,7 @@ const AdminHome = () => {
       <Sidebar />
       <HomeContainer>
         <Navbar />
-        HOMECONTAINER
         <WidgetsContainer>
-          Widget
           <Widget type="order" />
           <Widget type="earning" />
           <Widget type="balance" />
@@ -53,6 +52,7 @@ const AdminHome = () => {
         </Charts>
         <ListContainer>
           <ListTitle>Latest Transactions</ListTitle>
+          <TableList />
         </ListContainer>
       </HomeContainer>
     </HomeWrapper>

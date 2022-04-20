@@ -52,28 +52,73 @@ export const galleryObj = {
 export const services = [
   {
     id: 1,
-    name: 'Manicure 1'
+    name: 'Manicure 1',
   },
   {
     id: 2,
-    name: 'Manicure 2'
+    name: 'Manicure 2',
   },
   {
     id: 3,
-    name: 'Manicure 3'
+    name: 'Manicure 3',
   },
   {
     id: 4,
-    name: 'Manicure 4'
+    name: 'Manicure 4',
   },
   {
     id: 5,
-    name: 'Manicure 5'
+    name: 'Manicure 5',
   },
   {
     id: 6,
-    name: 'Manicure 6'
-  }
+    name: 'Manicure 6',
+  },
+];
 
-]
+// *****************ADMIN****************
+export const ordersRowData = [
+  {
+    id: 123,
+    products: ['Cinderella Press Ons'],
+    img: require('./media/nailflower.jpg').default,
+    date: "1 March",
+    customer: 'Dana Scully',
+    amount: 65,
+    method: 'Online Payment',
+    status: 'Approved'
+  },
 
+  {
+    id: 456,
+    products: ['Aladdin Press Ons'],
+    customer: 'Thonas Mor',
+    img: require('./media/leana.png').default,
+    date: "1 March",
+    amount: 75,
+    method: 'Online Payment',
+    status: 'Pending'
+  },
+
+  {
+    id: 789,
+    products: ['Hawaian Press Ons'],
+    customer: 'Tommy Bahama',
+    img: require('./media/lighting.jpg').default,
+    date: "1 March",
+    amount: 45,
+    method: 'Cash',
+    status: 'Approved'
+  },
+
+  {
+    id: 321,
+    products: ['Michael Scott Press Ons'],
+    customer: 'Michael Scott',
+    img: require('./media/options.png').default,
+    date: "1 March",
+    amount: 85,
+    method: 'Online Payment',
+    status: 'Pending'
+  },
+];
