@@ -1,6 +1,6 @@
 
 
-function DataTable() {
+const DataTable = () => {
   return (
     <div>
       table
