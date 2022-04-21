@@ -24,7 +24,6 @@ export const EditButton = styled.div`
   border-radius: 0px 0px 0px 5px;
 `;
 
-
 export const Item = styled.div`
   display: flex;
   gap: 20px;
@@ -34,6 +33,8 @@ export const Details = styled.div``;
 export const ItemTitle = styled.h1`
   margin-bottom: 10px;
   color: #555;
+  font-size: 20px;
+  font-weight: bolder;
 `;
 export const ItemDetail = styled.div`
   margin-bottom: 10px;
@@ -82,7 +83,7 @@ export const Bottom = styled.div`
   @media only screen and (min-width: 320px) {
     width: 70vw;
     height: 90vh;
-    hr{
+    hr {
       margin-bottom: 0.3rem;
     }
     h4 {

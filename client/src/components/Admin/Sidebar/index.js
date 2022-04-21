@@ -16,25 +16,32 @@ import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import InsertChartIcon from "@mui/icons-material/InsertChart";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
     <SidebarContainer>
       <TopContainer>
+      <Link to="/admin" style={{ textDecoration: "none" }}>
         <Logo>logo</Logo>
+        </Link>
       </TopContainer>
       <hr style={{ height: '0', border: '0.5px solid green' }} />
       <CenterContainer>
         <List>
+        <Link to="/admin" style={{ textDecoration: "none" }}>
           <ListItem>
             <DashboardIcon style={{ fontSize: '18px', color: '#9dd1e6' }} />
             <Title>Dashboard</Title>
           </ListItem>
+          </Link>
 
+          <Link to="/admin/products" style={{ textDecoration: 'none' }}>
           <ListItem>
             <StoreIcon style={{ fontSize: '18px', color: '#9dd1e6' }} />
             <Title>Products</Title>
           </ListItem>
+          </Link>
 
           <ListItem>
             <CreditCardIcon style={{ fontSize: '18px', color: '#9dd1e6' }} />
