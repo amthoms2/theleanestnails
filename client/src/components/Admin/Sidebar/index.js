@@ -6,7 +6,7 @@ import {
   List,
   ListItem,
   // BottomContainer,
-  Image,
+  // Image,
   Title,
 } from './SidebarElements';
 import img from "../../../media/LeanestNails-Web.png";

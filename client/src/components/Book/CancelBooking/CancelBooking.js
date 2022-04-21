@@ -17,13 +17,13 @@ const CancelBooking = () => {
       );
       console.log('findSlot', findSlot)
 
-      // const makeAvailable = findSlot.data.availability;
-      // console.log('makeAvailable', makeAvailable)
+      const makeAvailable = findSlot.data.availability;
+      console.log('makeAvailable', makeAvailable)
 
-      // const updateSlot = await axios.put(
-      //   `/api/availability/true/${findSlot.data.availability}`
-      // );
-      // console.log('updated slot', updateSlot.data);
+      const updateSlot = await axios.put(
+        `/api/availability/true/${findSlot.data.availability}`
+      );
+      console.log('updated slot', updateSlot.data);
 
       const res = await axios.delete(`/api/booking/${confirmationNumber}`);
       console.log('deleted booking', res.data);
