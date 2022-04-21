@@ -5,7 +5,6 @@ import { animateScroll as scrollUp } from 'react-scroll';
 import {
   Nav,
   NavContainer,
-  // Logo,
   MobileIcon,
   NavMenu,
   NavItem,

@@ -60,7 +60,7 @@ const Product = () => {
           <Chart aspect={2.5 / 1} title="Product Analytics ( Last 6 Months)" />
         </Right>
       </Top>
-      {visible === true && <Bottom>nlkgtngl gltrnglrtg ltgtg</Bottom>}
+      {visible === true && <Bottom>Edit Form</Bottom>}
     </>
   );
 };

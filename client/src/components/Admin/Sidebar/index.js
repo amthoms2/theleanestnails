@@ -6,16 +6,18 @@ import {
   List,
   ListItem,
   // BottomContainer,
+  Image,
   Title,
 } from './SidebarElements';
+import img from "../../../media/LeanestNails-Web.png";
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import StoreIcon from '@mui/icons-material/Store';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import InsertChartIcon from "@mui/icons-material/InsertChart";
+// import InsertChartIcon from "@mui/icons-material/InsertChart";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
@@ -23,7 +25,7 @@ const Sidebar = () => {
     <SidebarContainer>
       <TopContainer>
       <Link to="/admin" style={{ textDecoration: "none" }}>
-        <Logo>logo</Logo>
+        <Logo src={img} />
         </Link>
       </TopContainer>
       <hr style={{ height: '0', border: '0.5px solid green' }} />
@@ -54,16 +56,16 @@ const Sidebar = () => {
           </ListItem>
 
           <ListItem>
-            <InsertChartIcon style={{ fontSize: '18px', color: '#9dd1e6' }} />
-            <Title>Stats</Title>
-          </ListItem>
-
-          <ListItem>
-            <NotificationsNoneIcon
+            <CalendarMonthIcon
               style={{ fontSize: '18px', color: '#9dd1e6' }}
             />
-            <Title>Notifications</Title>
+            <Title>Appointments</Title>
           </ListItem>
+
+          {/* <ListItem>
+            <InsertChartIcon style={{ fontSize: '18px', color: '#9dd1e6' }} />
+            <Title>Stats</Title>
+          </ListItem> */}
 
           <ListItem>
             <AccountCircleOutlinedIcon

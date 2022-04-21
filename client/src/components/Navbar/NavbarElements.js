@@ -30,30 +30,11 @@ export const NavContainer = styled.div`
   max-width: 1100px;
 `;
 
-export const Logo = styled(LinkRouter)`
-  color: #fff;
-  justify-self: flex-start;
-  cursor: pointer;
-  font-size: 1.5rem;
-  display: ${({ display }) => (display === 'inherit' ? 'inherit' : 'flex')};
-  /* display: flex; */
-  align-items: center;
-  margin-left: 24px;
-  font-weight: bold;
-  text-decoration: none;
-`;
-
 export const Image = styled.img`
-  color: #fff;
   justify-self: flex-start;
   cursor: pointer;
-  font-size: 1.5rem;
-  display: ${({ display }) => (display === 'inherit' ? 'inherit' : 'flex')};
-  /* display: flex; */
   align-items: center;
   margin-left: 24px;
-  font-weight: bold;
-  text-decoration: none;
 `;
 
 export const MobileIcon = styled.div`

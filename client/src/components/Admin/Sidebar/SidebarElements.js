@@ -15,10 +15,11 @@ export const TopContainer = styled.div`
   justify-content: center;
   /* ^centers horizontally */
 `;
-export const Logo = styled.span`
-  font-size: 20px;
-  font-weight: bold;
-  color: #9dd1e6;
+export const Logo = styled.img`
+  width: 77px;
+  height: 69px;
+  border-radius: 50%;
+  margin-right: 10px;
 `;
 export const CenterContainer = styled.div`
   padding-left: 10px;

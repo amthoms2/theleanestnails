@@ -80,6 +80,7 @@ const NewProduct = () => {
               <Input
                 name="price"
                 type="number"
+                min="0"
                 placeholder="Amount"
                 onChange={handleChange}
               />
@@ -90,6 +91,7 @@ const NewProduct = () => {
               <Input
                 name="quantity"
                 type="number"
+                min="0"
                 placeholder="Qty"
                 onChange={handleChange}
               />
