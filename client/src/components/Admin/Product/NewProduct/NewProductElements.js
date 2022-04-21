@@ -17,8 +17,6 @@ const TopBottom = css`
   display: flex;
 `;
 
-
-
 export const Top = styled.div`
   ${TopBottom}
 `;

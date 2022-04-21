@@ -12,6 +12,8 @@ import AdminLogin from './pages/Admin/AdminLogin';
 import ProductList from './pages/Admin/ProductList';
 import ProductPage from './pages/Admin/Product';
 import New from './pages/Admin/New';
+import NewBooking from './pages/Admin/NewBooking';
+import AdminBookings from './pages/Admin/AdminBookings';
 
 function App() {
   return (
@@ -38,6 +40,12 @@ function App() {
             <Route index element={<ProductList />} />
             <Route path=":productId" element={<ProductPage />} />
             <Route path="new" element={<New />} />
+          </Route>
+
+          <Route path="admin/bookings">
+            <Route index element={<AdminBookings />} />
+            {/* <Route path=":productId" element={<ProductPage />} /> */}
+            <Route path="new" element={<NewBooking />} />
           </Route>
         </Route>
       </Routes>

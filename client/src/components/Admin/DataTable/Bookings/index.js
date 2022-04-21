@@ -1,26 +1,22 @@
 import {
-  ProductListContainer,
-  ProductItem,
+  ListContainer,
+  // Item,
   Title,
   // ProductButton,
   EditButton,
-  Image,
+  // Image,
   DeleteButton,
-  ProductLink,
-} from './DataTableElements';
+  ItemLink,} from '../DataTableElements';
 import { DataGrid } from '@mui/x-data-grid';
 import { Link } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
-import { productsRowsData } from '../../../data';
-// import { useState } from "react";
+import { bookingsData } from '../../../../data';
 
-const DataTable = () => {
-  // const [data, setData] = useState(userRows);
-
-  const deleteButton = (id, img) => {
+const BookingsTable = () => {
+  const deleteButton = (id) => {
     // deleteProducts(id, dispatch)
-    console.log('delete', id, img);
+    console.log('delete', id);
     // const filteredRow = data.filter((row) => row.id !== id);
     // setData(filteredRow);
 
@@ -30,8 +26,7 @@ const DataTable = () => {
     // }
     confirmAlert({
       title: 'Confirm to submit',
-      message:
-        'Are you sure? This item will be permanently deleted.',
+      message: 'Are you sure? This item will be permanently deleted.',
       buttons: [
         {
           label: 'Yes',
@@ -62,26 +57,14 @@ const DataTable = () => {
   };
 
   const columns = [
-    {
-      field: 'title',
-      headerName: 'Products',
-      width: 250,
-      renderCell: (params) => {
-        return (
-          <ProductItem>
-            <Image src={params.row.img} alt="nail product"></Image>
-            {params.row.title}
-          </ProductItem>
-        );
-      },
-    },
-    { field: 'inStock', headerName: 'Stock', width: 160 },
-    { field: 'quantity', headerName: 'Qty', width: 160 },
-    {
-      field: 'price',
-      headerName: 'Price',
-      width: 160,
-    },
+
+    { field: 'name', headerName: 'Name', width: 160 },
+    { field: 'email', headerName: 'Email', width: 160 },
+    { field: 'number', headerName: 'Number', width: 160},
+    { field: 'date', headerName: 'Date', width: 160},
+    { field: 'time', headerName: 'Time', width: 160},
+    { field: 'services', headerName: 'Services', width: 200},
+    { field: 'comments', headerName: 'Comments', width: 160},
     {
       field: 'action',
       headerName: 'Action',
@@ -89,11 +72,11 @@ const DataTable = () => {
       renderCell: (params) => {
         return (
           <>
-            <Link to={'/admin/products/' + params.row.id}>
+            <Link to={'/admin/bookings/' + params.row.id}>
               <EditButton>View</EditButton>
             </Link>
             <DeleteButton
-              onClick={() => deleteButton(params.row.id, params.row.img)}
+              onClick={() => deleteButton(params.row.id)}
             />
           </>
         );
@@ -103,22 +86,22 @@ const DataTable = () => {
 
   return (
     <>
-      <ProductListContainer>
+      <ListContainer>
         <Title>
-          <ProductLink to="/admin/products/new">
-            Add New Product
-          </ProductLink>
+          <ItemLink to="/admin/bookings/new">
+            Add New Appointment
+          </ItemLink>
         </Title>
         <DataGrid
-          rows={productsRowsData}
+          rows={bookingsData}
           columns={columns}
           pageSize={9}
           rowsPerPageOptions={[9]}
           disableSelectionOnClick
         />
-      </ProductListContainer>
+      </ListContainer>
     </>
   );
 };
 
-export default DataTable;
+export default BookingsTable;

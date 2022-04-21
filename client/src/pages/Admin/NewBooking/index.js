@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Sidebar from '../../../components/Admin/Sidebar';
 import Navbar from '../../../components/Admin/Navbar';
-import NewProduct from '../../../components/Admin/Product/NewProduct';
+import New from '../../../components/Admin/Booking/NewBooking';
 
 const NewContainer = styled.div`
   width: 100%;
@@ -11,16 +11,16 @@ const NewWrapper = styled.div`
   flex: 6;
 `;
 
-const New = () => {
+const NewBooking = () => {
   return (
     <NewContainer>
       <Sidebar />
       <NewWrapper>
         <Navbar />
-        <NewProduct />
+        <New />
       </NewWrapper>
     </NewContainer>
   );
 }
 
-export default New;
+export default NewBooking;

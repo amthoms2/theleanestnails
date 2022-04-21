@@ -47,22 +47,22 @@ router.put('/:id', async (req, res) => {
 });
 
 //CHANGE ISAVAILABLE TO TRUE
-// router.put('/true/:id', async (req, res) => {
-//   try {
-//     const updatedSlot = await Availability.findByIdAndUpdate(
-//       req.params.id,
-//       {
-//         $set: {"isAvailable":true}
-//       },
-//       { new: true }
-//     );
-//     updatedSlot.save();
-//     console.log('updatedSlot', updatedSlot);
-//     res.status(200).json(updatedSlot);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+router.put('/true/:id', async (req, res) => {
+  try {
+    const updatedSlot = await Availability.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: {"isAvailable":true}
+      },
+      { new: true }
+    );
+    updatedSlot.save();
+    console.log('updatedSlot', updatedSlot);
+    res.status(200).json(updatedSlot);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // router.post("/", function(req, res, next) {
 //   console.log("request attempted");

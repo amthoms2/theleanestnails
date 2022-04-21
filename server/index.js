@@ -15,16 +15,6 @@ mongoose
   .connect(process.env.MONGO_URL)
   .then((db) => {
     console.log('DB Connection Successful');
-    // let today = new Date();
-    // console.log('date today', today);
-
-    // db.availabilities.createIndex(
-    //   { createdDate: 1 },
-    //   {
-    //     expireAfterSeconds: 1,
-    //     partialFilterExpression: { date: { $gte: { today } } },
-    //   }
-    // );
   })
   .catch((err) => console.log('mongo error', err));
 

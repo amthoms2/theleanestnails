@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Sidebar from '../../../components/Admin/Sidebar';
 import Navbar from '../../../components/Admin/Navbar';
-import ProductsTable from '../../../components/Admin/DataTable/ProductList';
+import BookingsTable from '../../../components/Admin/DataTable/Bookings';
 
 const ListContainer = styled.div`
   display: flex;
@@ -11,16 +11,16 @@ const List = styled.div`
   flex: 6;
 `;
 
-const ProductList = () => {
+const BookingsList = () => {
   return (
     <ListContainer>
       <Sidebar />
       <List>
         <Navbar />
-        <ProductsTable />
+        <BookingsTable />
       </List>
     </ListContainer>
   );
 };
 
-export default ProductList;
+export default BookingsList;

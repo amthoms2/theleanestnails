@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
-export const ProductListContainer = styled.div`
+export const ListContainer = styled.div`
   height: 600px;
   padding: 20px;
   flex: 4;
   text-align: right;
 `;
 
-export const ProductItem = styled.div`
+export const Item = styled.div`
   display: flex;
   align-items: center;
 `;
@@ -48,7 +48,7 @@ export const DeleteButton = styled(DeleteOutlineIcon)`
   margin-left: 10px;
 `;
 
-export const ProductLink = styled(Link)`
+export const ItemLink = styled(Link)`
   text-decoration: none;
       color: green;
       font-size: 16px;

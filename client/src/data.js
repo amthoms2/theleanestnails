@@ -164,3 +164,40 @@ export const productsRowsData = [
     price: 35,
   },
 ];
+
+
+export const bookingsData = [
+  {
+    id: '6260e3ccd20deb0fbba549d3',
+    name: 'Michael Scott',
+    email: 'dm@gmail.com',
+    number: '555-555-5555',
+    comments: 'howdy partner',
+    date: '2022-04-21T16:56:47.000+00:00',
+    time: '11:30AM',
+    services: ['Pedicure', 'Manicure'],
+    availability: 'true',
+  },
+  {
+    id: '5260edwld20deb0fbba549d3',
+    name: 'Raven Thomas',
+    email: 'rt@gmail.com',
+    number: '545-554-5555',
+    comments: 'skids',
+    date: '2022-04-22T16:56:47.000+00:00',
+    time: '10:30AM',
+    services: ['Manicure'],
+    availability: 'true',
+  },
+  {
+    id: '1230edwld20deb0fbba549d3',
+    name: 'Pirate',
+    email: 'pirate@gmail.com',
+    number: '225-554-5555',
+    comments: 'ahoy',
+    date: '2022-04-20T16:56:47.000+00:00',
+    time: '10:00AM',
+    services: ['Manicure'],
+    availability: 'true',
+  }
+]
