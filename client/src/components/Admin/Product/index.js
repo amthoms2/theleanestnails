@@ -3,7 +3,6 @@ import {
   Top,
   Left,
   EditButton,
-  Title,
   Item,
   Image,
   Details,
@@ -16,7 +15,6 @@ import {
 } from './ProductElements';
 import { useLocation } from 'react-router-dom';
 import { productsRowsData } from '../../../data';
-import img from '../../../media/nailflower.jpg';
 
 import Chart from '../Chart';
 
@@ -25,42 +23,41 @@ const Product = () => {
 
   const location = useLocation();
   const productId = location.pathname.split('/')[3];
-console.log(productId)
-  const products = productsRowsData.find(prod => prod.id === productId);
-  console.log(products);
+  // eslint-disable-next-line
+  const product = productsRowsData.find((product) => (product.id == productId));
 
   return (
     <>
       <Top>
         <Left>
           <EditButton onClick={() => setVisible(!visible)}>Edit</EditButton>
-          <Title>Product</Title>
+          {/* <Title>Product</Title> */}
           <Item>
-            <Image src={img} alt="image of product" />
+            <Image src={product.img} alt="image of product" />
             <Details>
-              <ItemTitle>Nails</ItemTitle>
+              <ItemTitle>{product.title}</ItemTitle>
               <ItemDetail>
-                <ItemKey>Email:</ItemKey>
-                <ItemValue>janedoe@gmail.com</ItemValue>
+                <ItemKey>Description:</ItemKey>
+                <ItemValue>{product.description}</ItemValue>
               </ItemDetail>
               <ItemDetail>
-                <ItemKey>Phone:</ItemKey>
-                <ItemValue>+1 2345 67 89</ItemValue>
+                <ItemKey>In Stock:</ItemKey>
+                <ItemValue>{product.inStock}</ItemValue>
               </ItemDetail>
               <ItemDetail>
-                <ItemKey>Address:</ItemKey>
-                <ItemValue>Elton St. 234 Garden Yd. NewYork</ItemValue>
+                <ItemKey>Quantity:</ItemKey>
+                <ItemValue>{product.quantity}</ItemValue>
               </ItemDetail>
               <ItemDetail>
-                <ItemKey>Country:</ItemKey>
-                <ItemValue>USA</ItemValue>
+                <ItemKey>Price:</ItemKey>
+                <ItemValue>${product.price}</ItemValue>
               </ItemDetail>
             </Details>
           </Item>
         </Left>
 
         <Right>
-          <Chart aspect={3 / 1} title="User Spending ( Last 6 Months)" />
+          <Chart aspect={2.5 / 1} title="Product Analytics ( Last 6 Months)" />
         </Right>
       </Top>
       {visible === true && <Bottom>nlkgtngl gltrnglrtg ltgtg</Bottom>}

@@ -24,7 +24,6 @@ export const EditButton = styled.div`
   border-radius: 0px 0px 0px 5px;
 `;
 
-export const Title = styled.h1``;
 
 export const Item = styled.div`
   display: flex;
