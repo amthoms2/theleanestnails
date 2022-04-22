@@ -23,8 +23,20 @@ export const Bottom = styled.div`
 
 export const Left = styled.div`
   flex: 1;
-  text-align: center;
 `;
 export const Right = styled.div`
   flex: 2;
+`;
+
+export const List = styled.ul``;
+
+export const Button = styled.button`
+  text-decoration: none;
+  color: green;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid green;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
 `;

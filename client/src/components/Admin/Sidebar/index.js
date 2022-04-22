@@ -15,6 +15,7 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import StoreIcon from '@mui/icons-material/Store';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import ScheduleIcon from '@mui/icons-material/Schedule';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 // import InsertChartIcon from "@mui/icons-material/InsertChart";
@@ -56,17 +57,20 @@ const Sidebar = () => {
           </ListItem>
 
           <Link to="/admin/bookings" style={{ textDecoration: 'none' }}>
+          <ListItem>
+            <CalendarMonthIcon style={{ fontSize: '18px', color: '#9dd1e6' }} />
+            <Title>Appointments</Title>
+          </ListItem>
+          </Link>
+
+          <Link to="/admin/time-slots" style={{ textDecoration: 'none' }}>
             <ListItem>
-              <CalendarMonthIcon
+              <ScheduleIcon
                 style={{ fontSize: '18px', color: '#9dd1e6' }}
               />
-              <Title>Appointments</Title>
+              <Title>Time Slots</Title>
             </ListItem>
           </Link>
-          {/* <ListItem>
-            <InsertChartIcon style={{ fontSize: '18px', color: '#9dd1e6' }} />
-            <Title>Stats</Title>
-          </ListItem> */}
 
           <ListItem>
             <AccountCircleOutlinedIcon

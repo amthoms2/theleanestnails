@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Availability = require('../models/availability');
 
-//GET AVAILABLE APPOINTMENTS
+//GET AVAILABLE SLOTS
 router.get('/', async (req, res) => {
   try {
     const available = await Availability.find({isAvailable: true});
@@ -12,9 +12,20 @@ router.get('/', async (req, res) => {
   }
 });
 
+//GET ALL SLOTS
+router.get('/all', async (req, res) => {
+  try {
+    const all = await Availability.find();
+    res.status(200).json(all);
+    console.log(('available', all))
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 //CREATE NEW APPOINTMENT
 router.post('/newdate', async (req, res) => {
-  // console.log('req', req.body);
+  console.log('req', req.body);
   const date = new Availability({
     date: req.body.date,
   });
@@ -59,6 +70,16 @@ router.put('/true/:id', async (req, res) => {
     updatedSlot.save();
     console.log('updatedSlot', updatedSlot);
     res.status(200).json(updatedSlot);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//ADMIN DELETES SLOT
+router.delete('/:id', async (req, res) => {
+  try {
+    await Availability.findByIdAndDelete(req.params.id);
+    res.status(200).json('Slot has been deleted');
   } catch (err) {
     res.status(500).json(err);
   }

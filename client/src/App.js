@@ -14,6 +14,8 @@ import ProductPage from './pages/Admin/Product';
 import New from './pages/Admin/New';
 import NewBooking from './pages/Admin/NewBooking';
 import AdminBookings from './pages/Admin/AdminBookings';
+import AdminTimeSlots from './pages/Admin/AdminTimeSlots'
+import NewTimeSlot from './pages/Admin/NewTimeSlot'
 
 function App() {
   return (
@@ -46,6 +48,12 @@ function App() {
             <Route index element={<AdminBookings />} />
             {/* <Route path=":productId" element={<ProductPage />} /> */}
             <Route path="new" element={<NewBooking />} />
+          </Route>
+
+          <Route path="admin/time-slots">
+            <Route index element={<AdminTimeSlots />} />
+            {/* <Route path=":availabilityId" element={<TimeSlot />} /> */}
+            <Route path="new" element={<NewTimeSlot />} />
           </Route>
         </Route>
       </Routes>

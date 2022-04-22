@@ -10,7 +10,7 @@
 
 .MuiInputBase-root.MuiOutlinedInput-root {
   width: 250px;
-  right: 50px;
+  position: relative;
 }
 
 .MuiInputBase-input.MuiOutlinedInput-input {
