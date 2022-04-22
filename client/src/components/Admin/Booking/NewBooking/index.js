@@ -10,7 +10,7 @@ import {
   Right,
   List,
   Button,
-} from './BookingElements';
+} from '../BookingElements';
 import TextField from '@mui/material/TextField';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';

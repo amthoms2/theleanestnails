@@ -87,7 +87,7 @@ const BookingsTable = () => {
   return (
     <>
       <ListContainer>
-        <Title>
+        <Title  style={{visibility: 'hidden'}} >
           <ItemLink to="/admin/bookings/new">
             Add New Appointment
           </ItemLink>
