@@ -14,7 +14,7 @@ const BookingForm = ({ date, servicesList, time, isAvailable }) => {
     try {
       // eslint-disable-next-line
       await axios.post('/api/booking/book', form);
-      await axios.put(`/api/availability/${time.value._id}`)
+      await axios.put(`/api/availability/false/${time.value._id}`)
       await setTimeout(() => {
         setStatus('success');
       }, 3000);

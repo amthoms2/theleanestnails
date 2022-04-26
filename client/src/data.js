@@ -201,3 +201,18 @@ export const bookingsData = [
     availability: 'true',
   }
 ]
+
+export const timeSlots = [
+  {
+    _id: '6261cf3978edbe9ebf09b7c8',
+    date: '2022-04-29T17:00:04.000+00:00',
+    isAvailable: 'true'
+  },
+  {
+    _id: '6262de069152fdc432a3c4c1',
+    date: '2022-04-28T05:00:17.000+00:00',
+    isAvailable: 'false'
+  },
+
+
+]

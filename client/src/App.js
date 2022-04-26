@@ -16,6 +16,7 @@ import NewBooking from './pages/Admin/NewBooking';
 import AdminBookings from './pages/Admin/AdminBookings';
 import AdminTimeSlots from './pages/Admin/AdminTimeSlots'
 import NewTimeSlot from './pages/Admin/NewTimeSlot'
+import TimeSlot from './pages/Admin/ViewTimeSlot'
 
 function App() {
   return (
@@ -52,7 +53,7 @@ function App() {
 
           <Route path="admin/time-slots">
             <Route index element={<AdminTimeSlots />} />
-            {/* <Route path=":availabilityId" element={<TimeSlot />} /> */}
+            <Route path=":availabilityId" element={<TimeSlot />} />
             <Route path="new" element={<NewTimeSlot />} />
           </Route>
         </Route>

@@ -26,6 +26,10 @@ export const Left = styled.div`
 `;
 export const Right = styled.div`
   flex: 2;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 20px;
+  position: relative;
 `;
 
 export const List = styled.ul``;
@@ -39,4 +43,6 @@ export const Button = styled.button`
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: auto;
+  margin-right: 0;
 `;

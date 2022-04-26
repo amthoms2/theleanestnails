@@ -67,7 +67,7 @@ const SlotsTable = () => {
       renderCell: (params) => {
         return (
           <>
-            <Link to={'admin/time-slots/' + params.row._id}>
+            <Link to={'/admin/time-slots/' + params.row._id}>
               <EditButton>View</EditButton>
             </Link>
             <DeleteButton
