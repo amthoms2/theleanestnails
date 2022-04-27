@@ -44,6 +44,16 @@ router.get('/find/:id', async (req, res) => {
   }
 });
 
+//ADMIN GETS BOOKING THAT MATCHES AVAILABILITY ID
+router.get('/available/:id', async (req, res) => {
+  try {
+    const booking = await Booking.findOne({'availability': req.params.id});
+    res.status(200).json(booking);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 //USER CREATE BOOKING
 router.post('/book', async (req, res) => {
   console.log('req', req.body);

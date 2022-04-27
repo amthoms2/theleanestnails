@@ -18,6 +18,7 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ScheduleIcon from '@mui/icons-material/Schedule';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import WebIcon from '@mui/icons-material/Web';
 // import InsertChartIcon from "@mui/icons-material/InsertChart";
 import { Link } from 'react-router-dom';
 
@@ -57,18 +58,25 @@ const Sidebar = () => {
           </ListItem>
 
           <Link to="/admin/bookings" style={{ textDecoration: 'none' }}>
-          <ListItem>
-            <CalendarMonthIcon style={{ fontSize: '18px', color: '#9dd1e6' }} />
-            <Title>Appointments</Title>
-          </ListItem>
+            <ListItem>
+              <CalendarMonthIcon
+                style={{ fontSize: '18px', color: '#9dd1e6' }}
+              />
+              <Title>Appointments</Title>
+            </ListItem>
           </Link>
 
           <Link to="/admin/time-slots" style={{ textDecoration: 'none' }}>
             <ListItem>
-              <ScheduleIcon
-                style={{ fontSize: '18px', color: '#9dd1e6' }}
-              />
+              <ScheduleIcon style={{ fontSize: '18px', color: '#9dd1e6' }} />
               <Title>Time Slots</Title>
+            </ListItem>
+          </Link>
+
+          <Link to="/admin/website" style={{ textDecoration: 'none' }}>
+            <ListItem>
+              <WebIcon style={{ fontSize: '18px', color: '#9dd1e6' }} />
+              <Title>Website</Title>
             </ListItem>
           </Link>
 

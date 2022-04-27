@@ -16,19 +16,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 const SlotsTable = () => {
   let navigate = useNavigate();
   const [allSlots, setAllSlots] = useState([]);
-
-  useEffect(() => {
-    const getSlots = async () => {
-      try {
-        const res = await axios.get('/api/availability/all');
-        setAllSlots(res.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getSlots();
-    console.log('rendered again');
-  }, []);
+  // const [booking, setBooking] = useState({});
 
   const deleteButton = (id) => {
     confirmAlert({
@@ -39,7 +27,19 @@ const SlotsTable = () => {
           label: 'Yes',
           onClick: async () => {
             try {
-              await axios.delete(`/api/availability/${id}`);
+              const slot = await axios.get(`/api/availability/find/${id}`);
+              console.log('slot in db', slot)
+
+              if(slot.data.isAvailable === true){
+                console.log('isAvailable is true!!')
+                await axios.delete(`/api/availability/${id}`);
+              } else {
+                console.log('isAvailable is false!!')
+                const booking = await axios.get(`/api/booking/available/${id}`);
+                console.log('booking to delete', booking)
+                await axios.delete(`/api/booking/${booking.data._id}`);
+                await axios.delete(`/api/availability/${id}`);
+              }
               navigate("/admin", { replace: true });
           } catch (err) {
             console.log(err);
@@ -78,6 +78,32 @@ const SlotsTable = () => {
       },
     },
   ];
+
+  useEffect(() => {
+    const getSlots = async () => {
+      try {
+        const res = await axios.get('/api/availability/all');
+        setAllSlots(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getSlots();
+    console.log('rendered again');
+  }, []);
+
+  // useEffect(() => {
+  //   const getBooking = async () => {
+  //     try {
+  //       const res = await axios.get(`/api/booking/available/${}`);
+  //       setBooking(res.data);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+  //   getBooking();
+  //   console.log('rendered again');
+  // }, []);
 
 
   return (

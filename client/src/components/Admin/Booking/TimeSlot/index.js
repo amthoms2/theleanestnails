@@ -26,25 +26,11 @@ const ViewTimeSlot = () => {
   const [visible, setVisible] = useState(false);
   const [value, setValue] = useState('');
   const [singleSlot, setSingleSlot] = useState({});
-  // const [booking, setBooking] = useState(null);
   const [allBookings, setAllBookings] = useState([]);
 
   const location = useLocation();
   const slotId = location.pathname.split('/')[3];
-  // eslint-disable-next-line
   const booking = allBookings.find((booking) => booking.availability === slotId);
-
-  // const getBooking = () => {
-  //   if (booking !== null) {
-  //     let booking = allBookings.filter((booking) => {
-  //       return slotId === booking.availability;
-  //     });
-  //     return booking
-  //   } else {
-  //     console.log('no')
-  //   }
-  // };
-  // console.log(getBooking());
 
   const handleChange = (newValue) => {
     console.log(moment(value).format('LT'));
