@@ -23,6 +23,17 @@ router.get('/all', async (req, res) => {
   }
 });
 
+//GET SINGLE SLOT
+router.get('/find/:id', async (req, res) => {
+  try {
+    const slot = await Availability.findById(req.params.id);
+    res.status(200).json(slot);
+    console.log(('available', slot))
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 //CREATE NEW SLOT
 router.post('/newdate', async (req, res) => {
   console.log('req', req.body);

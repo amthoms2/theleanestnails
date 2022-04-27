@@ -20,6 +20,7 @@ const TimeSlot = () => {
   let navigate = useNavigate();
   const [value, setValue] = useState('');
   const [allSlots, setAllSlots] = useState([]);
+
   const handleChange = (newValue) => {
     setValue(newValue);
   };
@@ -85,7 +86,7 @@ const TimeSlot = () => {
                   getCurrentDay().map((slot) => (
                     <>
                       <li key={slot._id}>
-                        {moment(slot.date).format('YYYY-MM-DD, h:mm:ss a')}
+                        {moment(slot.date).format('YYYY-MM-DD, h:mm a')}
                       </li>
                       <p>Still Available? {slot.isAvailable.toString()}</p>
                     </>

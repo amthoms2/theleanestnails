@@ -23,7 +23,16 @@ contactEmail.verify((error) => {
   }
 });
 
-// console.log('db info', db.bookings.find())
+//ADMIN GETS ALL BOOKINGS
+router.get('/', async (req, res) => {
+  try {
+    const allBookings = await Booking.find();
+    res.status(200).json(allBookings);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 //USER GETS BOOKING
 router.get('/find/:id', async (req, res) => {
@@ -141,6 +150,26 @@ router.put('/:id', async (req, res) => {
     updatedBooking.save();
     console.log('updatedBooking', updatedBooking);
     res.status(200).json(updatedBooking);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//ADMINN UPDATES USER BOOKING DATE AND TIME
+router.put('/update/:id', async (req, res) => {
+  console.log(req.params.id)
+  try {
+    const updatedSlot = await Booking.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set:
+        {"date":req.body.date, "time":req.body.time}
+      },
+      { new: true }
+    );
+    updatedSlot.save();
+    console.log('updatedSlot', updatedSlot);
+    res.status(200).json(updatedSlot);
   } catch (err) {
     res.status(500).json(err);
   }
