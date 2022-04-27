@@ -16,7 +16,6 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 const SlotsTable = () => {
   let navigate = useNavigate();
   const [allSlots, setAllSlots] = useState([]);
-  // const [booking, setBooking] = useState({});
 
   const deleteButton = (id) => {
     confirmAlert({
@@ -36,7 +35,7 @@ const SlotsTable = () => {
               } else {
                 console.log('isAvailable is false!!')
                 const booking = await axios.get(`/api/booking/available/${id}`);
-                console.log('booking to delete', booking)
+
                 await axios.delete(`/api/booking/${booking.data._id}`);
                 await axios.delete(`/api/availability/${id}`);
               }
@@ -91,20 +90,6 @@ const SlotsTable = () => {
     getSlots();
     console.log('rendered again');
   }, []);
-
-  // useEffect(() => {
-  //   const getBooking = async () => {
-  //     try {
-  //       const res = await axios.get(`/api/booking/available/${}`);
-  //       setBooking(res.data);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-  //   getBooking();
-  //   console.log('rendered again');
-  // }, []);
-
 
   return (
     <>
