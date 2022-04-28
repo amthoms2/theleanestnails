@@ -3,7 +3,7 @@ const config = {
     messages: {
       success: 'Your appointment has been booked. Please check your email.',
       error:
-        'An error occurred. Please contact us at theleanestnails.business@gmail.com',
+        'An error occurred. Please contact theleanestnails.business@gmail.com',
     },
     buttonText: 'Submit',
     spinner: true,

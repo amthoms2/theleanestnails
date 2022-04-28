@@ -10,9 +10,14 @@ const BookingForm = ({ date, servicesList, time, isAvailable }) => {
 
   const handleSubmit = async (form) => {
     setStatus('loading');
-    form = { ...form, Date: date, Time: time.label, ServicesList: servicesList, AvailableId: time.value._id};
     try {
-      // eslint-disable-next-line
+      if(date !== null && time !== null && servicesList.length > 0){
+        form = { ...form, Date: date, Time: time.label, ServicesList: servicesList, AvailableId: time.value._id};
+      } else {
+        setTimeout(() => {
+          setStatus('error');
+        }, 3000);
+      }
       await axios.post('/api/booking/book', form);
       await axios.put(`/api/availability/false/${time.value._id}`)
       await setTimeout(() => {
