@@ -36,7 +36,7 @@ function App() {
 
           <Route path="admin">
             <Route index element={<AdminHome />} />
-            <Route path="admin-login" element={<AdminLogin />} />
+            <Route path="login" element={<AdminLogin />} />
           </Route>
 
           <Route path="admin/products">

@@ -42,22 +42,17 @@ const Footer = () => {
                   Home
                 </FooterLink>
                 <FooterLink to="/gallery">Gallery</FooterLink>
-                <FooterLink to="/book">Book an Appointment</FooterLink>
-                <FooterLink to="/cancel">Cancel Appointment</FooterLink>
                 <FooterLink to="/shop">Shop</FooterLink>
                 <FooterLink to="/contact">Contact Me</FooterLink>
+
               </FooterItems>
 
               <FooterItems>
                 <FooterH1>Quick Links</FooterH1>
-                <FooterLink to="/" onClick={toggleHome}>
-                  Home
-                </FooterLink>
-                <FooterLink to="/gallery">Gallery</FooterLink>
                 <FooterLink to="/book">Book an Appointment</FooterLink>
                 <FooterLink to="/cancel">Cancel Appointment</FooterLink>
-                <FooterLink to="/shop">Shop</FooterLink>
-                <FooterLink to="/contact">Contact Me</FooterLink>
+                <FooterLink to="/policies">Policies</FooterLink>
+                <FooterLink to="/admin/login">Admin</FooterLink>
               </FooterItems>
             </LinksWrapper>
           </FooterLinks>

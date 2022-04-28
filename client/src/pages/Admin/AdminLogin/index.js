@@ -1,9 +1,9 @@
-
+import LoginForm from "../../../components/Admin/Login"
 
 function AdminLogin() {
   return (
     <div>
-      admin login
+      <LoginForm />
     </div>
   )
 }
