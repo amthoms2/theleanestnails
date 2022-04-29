@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { useSelector } from "react-redux";
 // import { useState, useEffect } from 'react';
 // import AuthService from './services/auth';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,23 +20,14 @@ import AdminBookings from './pages/Admin/AdminBookings';
 import AdminTimeSlots from './pages/Admin/AdminTimeSlots';
 import NewTimeSlot from './pages/Admin/NewTimeSlot';
 import TimeSlot from './pages/Admin/ViewTimeSlot';
-import useLocalStorageState from './components/Hooks/useLocalStorageState'
 
 function App() {
-  const [admin] = useLocalStorageState("user", "");
-
-  // const [admin, setAdmin] = useState(undefined)
-  // useEffect(() => {
-  //   const admin = AuthService.getCurrentUser();
-  //   console.log('user use effect app', admin);
-  //   if (admin && admin.isAdmin === true) {
-  //     setAdmin(admin);
-  //     // setShowModeratorBoard(user.roles.includes("ROLE_MODERATOR"));
-  //     // setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
-  //   }
-  // }, []);
-
-
+  const admin = useSelector((state) => {
+    if (state.user.currentUser) {
+      return state.user.currentUser.isAdmin
+    }
+    return false
+  });
 
   return (
     <Router>
@@ -47,8 +39,7 @@ function App() {
           <Route path="cancel" element={<Cancel />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="gallery" element={<GalleryPage />} />
-          {/* <Route path="login">{admin ? navigate("/admin") : <AdminLogin /> }</Route> */}
-          <Route path="login" element={<AdminLogin />} />
+          <Route path="/login" element={admin ? <Navigate to="/admin" /> : <AdminLogin />}/>
           {/* <Route path="/about" element={<AboutPage />} /> */}
           {/* <Route path="/modifybooking" element={<Modify />} /> */}
 
@@ -77,7 +68,7 @@ function App() {
                 <Route path="new" element={<NewTimeSlot />} />
               </Route>
             </>
-          )}
+           )}
         </Route>
       </Routes>
     </Router>

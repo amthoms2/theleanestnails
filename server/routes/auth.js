@@ -8,8 +8,9 @@ const { verifyTokenandAdmin } = require('./verifyToken');
 
 
 //ADMIN LOGIN POST ROUTE
-router.post("/admin/login", async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
+    console.log('req in back end', req.body)
     const user = await User.findOne({ username: req.body.username });
 
     if (!user) return res.status(401).json("You entered in the wrong credentials");

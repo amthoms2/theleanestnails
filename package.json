@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@google-cloud/local-auth": "^1.0.1",
+    "@reduxjs/toolkit": "^1.8.1",
     "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.0",
@@ -23,6 +24,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.7",
     "nodemailer": "^6.7.3",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "redux-persist": "^6.0.0"
   }
 }

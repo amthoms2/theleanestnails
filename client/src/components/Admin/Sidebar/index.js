@@ -26,7 +26,7 @@ const Sidebar = () => {
   return (
     <SidebarContainer>
       <TopContainer>
-        <Link to="/admin" style={{ textDecoration: 'none' }}>
+        <Link to="/" style={{ textDecoration: 'none' }}>
           <Logo src={img} />
         </Link>
       </TopContainer>
