@@ -1,10 +1,12 @@
 import LoginForm from "../../../components/Admin/Login"
+import Footer from "../../../components/Footer"
 
 function AdminLogin() {
   return (
-    <div>
+    <>
       <LoginForm />
-    </div>
+      <Footer />
+    </>
   )
 }
 

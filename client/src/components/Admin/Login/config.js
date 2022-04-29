@@ -3,7 +3,7 @@ const config = {
     messages: {
       success: 'Success!',
       error:
-        'An error occurred. Please contact amthoms2.business@gmail.com',
+        'An error occurred',
     },
     buttonText: 'Send',
     spinner: true,

@@ -9,6 +9,8 @@ const cors = require('cors');
 const bookingRoute = require('./routes/booking');
 const contactRoute = require('./routes/contact');
 const availabilityRoute = require('./routes/availability.js');
+const authRoute = require('./routes/auth.js');
+const userRoute = require('./routes/user.js');
 const googleRoute = require('./routes/google');
 
 mongoose
@@ -27,6 +29,8 @@ app.use(express.json()); // format of sending data via key: value pairs
 app.use('/api/booking', bookingRoute);
 app.use('/api/contact', contactRoute);
 app.use('/api/availability', availabilityRoute);
+app.use('/api/auth', authRoute);
+app.use('/api/user', userRoute);
 
 app.get('/api/test', () => {
   console.log('test is successful');

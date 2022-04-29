@@ -52,7 +52,7 @@ const Footer = () => {
                 <FooterLink to="/book">Book an Appointment</FooterLink>
                 <FooterLink to="/cancel">Cancel Appointment</FooterLink>
                 <FooterLink to="/policies">Policies</FooterLink>
-                <FooterLink to="/admin/login">Admin</FooterLink>
+                <FooterLink to="/login">Admin</FooterLink>
               </FooterItems>
             </LinksWrapper>
           </FooterLinks>
