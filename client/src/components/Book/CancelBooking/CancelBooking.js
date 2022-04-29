@@ -12,21 +12,20 @@ const CancelBooking = () => {
     setStatus('loading');
     let confirmationNumber = form['Confirmation #'];
     try {
-      const findSlot = await axios.get(
-        `/api/booking/find/${confirmationNumber}`
-      );
-      console.log('findSlot', findSlot)
+      // const findSlot = await axios.get(
+      //   `/api/booking/find/${confirmationNumber}`
+      // );
 
-      const makeAvailable = findSlot.data.availability;
-      console.log('makeAvailable', makeAvailable)
+      // const makeAvailable = findSlot.data.availability;
+      // console.log('makeAvailable', makeAvailable)
 
-      const updateSlot = await axios.put(
-        `/api/availability/true/${findSlot.data.availability}`
-      );
-      console.log('updated slot', updateSlot.data);
+      // const updateSlot = await axios.put(
+      //   `/api/availability/true/${findSlot.data.availability}`
+      // );
+      // console.log('updated slot', updateSlot.data);
 
-      const res = await axios.delete(`/api/booking/${confirmationNumber}`);
-      console.log('deleted booking', res.data);
+      await axios.delete(`/api/booking/${confirmationNumber}`);
+      // console.log('deleted booking', res.data);
 
       await setTimeout(() => {
         setStatus('success');

@@ -31,7 +31,6 @@ const BookingsTable = () => {
         {
           label: 'Yes',
           onClick: () => {
-            console.log('woild have been deleted');
             // deleteProducts(id, dispatch);
             // Delete the img file with product!
 

@@ -27,7 +27,6 @@ const SlotsTable = () => {
           onClick: async () => {
             try {
               const slot = await axios.get(`/api/availability/find/${id}`);
-              console.log('slot in db', slot)
 
               if(slot.data.isAvailable === true){
                 console.log('isAvailable is true!!')

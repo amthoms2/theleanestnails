@@ -43,8 +43,6 @@ const Booking = () => {
     console.log('rendered again');
   }, []);
 
-  console.log('availabledates', availableDates);
-
   const filterTimes = () => {
     let getValueDay = moment(value).format('YYYY-MM-DD');
 

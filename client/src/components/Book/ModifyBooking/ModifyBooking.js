@@ -11,7 +11,6 @@ const ModifyBooking = () => {
   const handleSubmit = async (form) => {
     setStatus('loading');
     let confirmationNumber = form['Confirmation #'];
-    console.log('form here', form)
     try {
       const res = await axios.put(
         `/api/booking/${confirmationNumber}`,
@@ -20,7 +19,7 @@ const ModifyBooking = () => {
       await setTimeout(() => {
         setStatus('success');
       }, 3000);
-      console.log('res in booking', res.data);
+      // console.log('res in booking', res.data);
     } catch (err) {
       setTimeout(() => {
         setStatus('error');

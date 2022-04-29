@@ -33,7 +33,6 @@ const ViewTimeSlot = () => {
   const booking = allBookings.find((booking) => booking.availability === slotId);
 
   const handleChange = (newValue) => {
-    console.log(moment(value).format('LT'));
     setValue(newValue);
   };
 
