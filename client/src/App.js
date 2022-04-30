@@ -19,7 +19,9 @@ import NewBooking from './pages/Admin/NewBooking';
 import AdminBookings from './pages/Admin/AdminBookings';
 import AdminTimeSlots from './pages/Admin/AdminTimeSlots';
 import NewTimeSlot from './pages/Admin/NewTimeSlot';
+import NewImage from './pages/Admin/NewImage';
 import TimeSlot from './pages/Admin/ViewTimeSlot';
+import AdminGallery from './pages/Admin/Gallery';
 
 function App() {
   const admin = useSelector((state) => {
@@ -48,6 +50,9 @@ function App() {
             <>
               <Route path="admin">
                 <Route index element={<AdminHome />} />
+                <Route path="/admin/gallery" element={<AdminGallery />} />
+                <Route path="/admin/gallery/new" element={<NewImage />} />
+                {/* <Route path="/admin/gallery/:galleryId" element={<ImagePage />} /> */}
               </Route>
 
               <Route path="admin/products">

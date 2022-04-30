@@ -165,7 +165,6 @@ export const productsRowsData = [
   },
 ];
 
-
 export const bookingsData = [
   {
     id: '6260e3ccd20deb0fbba549d3',
@@ -199,20 +198,29 @@ export const bookingsData = [
     time: '10:00AM',
     services: ['Manicure'],
     availability: 'true',
-  }
-]
+  },
+];
 
 export const timeSlots = [
   {
     _id: '6261cf3978edbe9ebf09b7c8',
     date: '2022-04-29T17:00:04.000+00:00',
-    isAvailable: 'true'
+    isAvailable: 'true',
   },
   {
     _id: '6262de069152fdc432a3c4c1',
     date: '2022-04-28T05:00:17.000+00:00',
-    isAvailable: 'false'
+    isAvailable: 'false',
   },
+];
 
-
-]
+export const galleryData = [
+  {
+    _id: '6261cf3978edbe9ebf09b7c8',
+    img: require('./media/lighting.jpg').default,
+  },
+  {
+    _id: '6261cf4578edbe9ebf09b7c8',
+    img: require('./media/nailflower.jpg').default,
+  },
+];

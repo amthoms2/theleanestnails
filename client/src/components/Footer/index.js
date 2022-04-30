@@ -43,7 +43,7 @@ const Footer = () => {
                 </FooterLink>
                 <FooterLink to="/gallery">Gallery</FooterLink>
                 <FooterLink to="/shop">Shop</FooterLink>
-                <FooterLink to="/contact">Contact Me</FooterLink>
+                <FooterLink to="/contact">Contacts</FooterLink>
 
               </FooterItems>
 

@@ -19,6 +19,7 @@ import ScheduleIcon from '@mui/icons-material/Schedule';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import WebIcon from '@mui/icons-material/Web';
+import CollectionsIcon from '@mui/icons-material/Collections';
 // import InsertChartIcon from "@mui/icons-material/InsertChart";
 import { Link } from 'react-router-dom';
 
@@ -77,6 +78,13 @@ const Sidebar = () => {
             <ListItem>
               <WebIcon style={{ fontSize: '18px', color: '#9dd1e6' }} />
               <Title>Website</Title>
+            </ListItem>
+          </Link>
+
+          <Link to="/admin/gallery" style={{ textDecoration: 'none' }}>
+            <ListItem>
+              <CollectionsIcon style={{ fontSize: '18px', color: '#9dd1e6' }} />
+              <Title>Gallery</Title>
             </ListItem>
           </Link>
 
